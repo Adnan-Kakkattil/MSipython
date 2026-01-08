@@ -1,0 +1,212 @@
+2025-12-16 09:00:36 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:00:36 | INFO | Running with administrative privileges.
+2025-12-16 09:00:37 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:00:38 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:00:38 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:00:38 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:00:38 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:00:38 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:00:38 | INFO | SQLite connection closed.
+2025-12-16 09:00:38 | INFO | Credentials successfully decrypted.
+2025-12-16 09:00:38 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:00:39 | WARNING | No TenantId found for 'deloite technologies'
+2025-12-16 09:00:40 | WARNING | No data found for tenant_id: None
+2025-12-16 09:02:03 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:02:03 | INFO | Running with administrative privileges.
+2025-12-16 09:02:03 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:02:04 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:02:04 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:02:04 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:02:04 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:02:04 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:02:04 | INFO | SQLite connection closed.
+2025-12-16 09:02:04 | INFO | Credentials successfully decrypted.
+2025-12-16 09:02:04 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:02:05 | WARNING | No TenantId found for 'Deloite Technologies'
+2025-12-16 09:02:06 | WARNING | No data found for tenant_id: None
+2025-12-16 09:03:08 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:03:08 | INFO | Running with administrative privileges.
+2025-12-16 09:03:08 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:03:09 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:03:09 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:03:09 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:03:09 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:03:09 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:03:09 | INFO | SQLite connection closed.
+2025-12-16 09:03:09 | INFO | Credentials successfully decrypted.
+2025-12-16 09:03:09 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:03:10 | WARNING | No TenantId found for 'Deloite Technologies'
+2025-12-16 09:03:11 | WARNING | No data found for tenant_id: None
+2025-12-16 09:07:34 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:07:34 | INFO | Running with administrative privileges.
+2025-12-16 09:07:34 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:07:35 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:07:35 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:07:35 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:07:35 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:07:35 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:07:35 | INFO | SQLite connection closed.
+2025-12-16 09:07:35 | INFO | Credentials successfully decrypted.
+2025-12-16 09:07:35 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:07:36 | INFO | Tenant ID found for 'Deloite Technologies': 29
+2025-12-16 09:07:37 | WARNING | No data found for tenant_id: 29
+2025-12-16 09:09:48 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:09:48 | INFO | Running with administrative privileges.
+2025-12-16 09:09:48 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:09:49 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:09:49 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:09:49 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:09:49 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:09:49 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:09:49 | INFO | SQLite connection closed.
+2025-12-16 09:09:49 | INFO | Credentials successfully decrypted.
+2025-12-16 09:09:49 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:09:50 | INFO | Tenant ID found for 'Deloite Technologies': 29
+2025-12-16 09:09:51 | WARNING | Installation not allowed for tenant 29: Maximum installations reached (0/0)
+2025-12-16 09:12:50 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:12:50 | INFO | Running with administrative privileges.
+2025-12-16 09:12:50 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:12:51 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:12:51 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:12:51 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:12:51 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:12:51 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:12:51 | INFO | SQLite connection closed.
+2025-12-16 09:12:51 | INFO | Credentials successfully decrypted.
+2025-12-16 09:12:51 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:12:53 | INFO | Tenant ID found for 'Deloite Technologies': 29
+2025-12-16 09:12:53 | INFO | Installation allowed for tenant 29 (1/200)
+2025-12-16 09:12:53 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-16 09:12:53 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-16 09:12:53 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-16 09:12:54 | INFO | Register Agent API returned status: 200
+2025-12-16 09:12:54 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '16', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-16 09:12:54 | INFO | Starting installation...
+2025-12-16 09:12:54 | INFO | InstallWorker started.
+2025-12-16 09:12:54 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-16 09:12:54 | INFO | EXE files found to terminate: []
+2025-12-16 09:12:56 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-16 09:12:56 | INFO | End_task completed successfully.
+2025-12-16 09:12:56 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-16 09:12:56 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-15.log'
+2025-12-16 09:12:56 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-16 09:12:56 | INFO | Previous version removed successfully.
+2025-12-16 09:12:56 | INFO | Starting download of main and model packages in parallel.
+2025-12-16 09:12:56 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:12:56 | INFO | Credentials successfully decoded from database.
+2025-12-16 09:12:56 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:12:56 | INFO | Latest Version_Id retrieved: v4.0.0
+2025-12-16 09:12:57 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:12:57 | INFO | Starting main package download from API...
+2025-12-16 09:12:57 | INFO | File size from API: 31 bytes
+2025-12-16 09:13:04 | INFO | Downloaded main package successfully.
+2025-12-16 09:13:04 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-16 09:13:11 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2025-12-16 09:13:11 | INFO | Main package extracted successfully.
+2025-12-16 09:13:11 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:13:12 | INFO | Latest Version_Id retrieved: v4.0.0
+2025-12-16 09:13:12 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:13:12 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2025-12-16 09:13:12 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2025-12-16 09:13:12 | INFO | Main package download/extraction result: True
+2025-12-16 09:13:12 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2025-12-16 09:13:12 | INFO | === Autostart Process Started ===
+2025-12-16 09:13:15 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2025-12-16 09:13:15 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2025-12-16 09:13:16 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2025-12-16 09:14:05 | INFO | Terminated existing instance: EbantisV4.exe
+2025-12-16 09:14:07 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2025-12-16 09:14:07 | INFO | Removed old shortcut: EbantisV4.lnk
+2025-12-16 09:14:07 | INFO | Removed old shortcut: TrackAutoUpdateService.lnk
+2025-12-16 09:14:07 | INFO | Added EbantisV4.exe to Windows Startup.
+2025-12-16 09:14:07 | INFO | EbantisV4.exe successfully configured for autostart.
+2025-12-16 09:14:07 | INFO | === Autostart Process Finished ===
+2025-12-16 09:14:07 | INFO | Wazuh agent installation started.
+2025-12-16 09:14:32 | INFO | Service 'WazuhSvc' status: running
+2025-12-16 09:14:32 | INFO | OSSEC agent directory found: C:\Program Files (x86)\ossec-agent
+2025-12-16 09:14:32 | INFO | Wazuh agent installed and running successfully.
+2025-12-16 09:14:32 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:14:32 | INFO | Credentials successfully decoded from database.
+2025-12-16 09:14:32 | WARNING | No tenant found with name 'deloite technologies'
+2025-12-16 09:14:32 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:14:33 | INFO | Latest Version_Id retrieved: v4.0.0
+2025-12-16 09:14:34 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:14:34 | INFO | Updating installed device count for tenant_id: None
+2025-12-16 09:14:34 | WARNING | No matching tenant found for tenant_id: None
+2025-12-16 09:14:34 | INFO | Installed device count update: False, message: No matching tenant found for tenant_id: None
+2025-12-16 09:14:34 | INFO | Installation completed successfully.
+2025-12-16 09:14:39 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-16 09:14:39 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\update
+2025-12-16 09:30:59 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2025-12-16.log',)
+2025-12-16 09:30:59 | INFO | Running with administrative privileges.
+2025-12-16 09:30:59 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-16 09:31:00 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-16 09:31:00 | INFO | Tenant name 'Deloite Technologies' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-16 09:31:00 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=deloite technologies for tenant: deloite technologies
+2025-12-16 09:31:00 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:31:00 | INFO | API credentials successfully stored in SQLite.
+2025-12-16 09:31:00 | INFO | SQLite connection closed.
+2025-12-16 09:31:00 | INFO | Credentials successfully decrypted.
+2025-12-16 09:31:00 | INFO | MongoDB connection string retrieved successfully.
+2025-12-16 09:31:01 | INFO | Tenant ID found for 'Deloite Technologies': 29
+2025-12-16 09:31:01 | INFO | Installation allowed for tenant 29 (1/200)
+2025-12-16 09:31:01 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-16 09:31:01 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-16 09:31:01 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-16 09:31:02 | INFO | Register Agent API returned status: 200
+2025-12-16 09:31:02 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '16', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-16 09:31:02 | INFO | Starting installation...
+2025-12-16 09:31:02 | INFO | InstallWorker started.
+2025-12-16 09:31:02 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-16 09:31:02 | INFO | EXE files found to terminate: []
+2025-12-16 09:31:04 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-16 09:31:04 | INFO | End_task completed successfully.
+2025-12-16 09:31:04 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-16 09:31:04 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-16.log'
+2025-12-16 09:31:04 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-16 09:31:04 | INFO | Previous version removed successfully.
+2025-12-16 09:31:04 | INFO | Starting download of main and model packages in parallel.
+2025-12-16 09:31:04 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:31:04 | INFO | Credentials successfully decoded from database.
+2025-12-16 09:31:04 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:31:05 | INFO | Latest Version_Id retrieved: v4.0.1
+2025-12-16 09:31:05 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:31:05 | INFO | Starting main package download from API...
+2025-12-16 09:31:06 | INFO | File size from API: 31 bytes
+2025-12-16 09:31:09 | INFO | Downloaded main package successfully.
+2025-12-16 09:31:09 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-16 09:31:14 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2025-12-16 09:31:14 | INFO | Main package extracted successfully.
+2025-12-16 09:31:14 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:31:14 | INFO | Latest Version_Id retrieved: v4.0.1
+2025-12-16 09:31:15 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:31:15 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2025-12-16 09:31:15 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2025-12-16 09:31:15 | INFO | Main package download/extraction result: True
+2025-12-16 09:31:15 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2025-12-16 09:31:15 | INFO | === Autostart Process Started ===
+2025-12-16 09:31:17 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2025-12-16 09:31:17 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2025-12-16 09:31:17 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2025-12-16 09:31:46 | INFO | Terminated existing instance: EbantisV4.exe
+2025-12-16 09:31:49 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2025-12-16 09:31:49 | INFO | Removed old shortcut: EbantisV4.lnk
+2025-12-16 09:31:49 | INFO | Added EbantisV4.exe to Windows Startup.
+2025-12-16 09:31:49 | INFO | EbantisV4.exe successfully configured for autostart.
+2025-12-16 09:31:49 | INFO | === Autostart Process Finished ===
+2025-12-16 09:31:49 | INFO | Wazuh agent installation started.
+2025-12-16 09:32:06 | INFO | Service 'WazuhSvc' status: running
+2025-12-16 09:32:06 | INFO | OSSEC agent directory found: C:\Program Files (x86)\ossec-agent
+2025-12-16 09:32:06 | INFO | Wazuh agent installed and running successfully.
+2025-12-16 09:32:06 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-16 09:32:06 | INFO | Credentials successfully decoded from database.
+2025-12-16 09:32:07 | WARNING | No tenant found with name 'deloite technologies'
+2025-12-16 09:32:07 | INFO | Fetching latest version details from MongoDB...
+2025-12-16 09:32:07 | INFO | Latest Version_Id retrieved: v4.0.1
+2025-12-16 09:32:08 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-16 09:32:08 | INFO | Updating installed device count for tenant_id: None
+2025-12-16 09:32:09 | WARNING | No matching tenant found for tenant_id: None
+2025-12-16 09:32:09 | INFO | Installed device count update: False, message: No matching tenant found for tenant_id: None
+2025-12-16 09:32:09 | INFO | Installation completed successfully.
+2025-12-16 09:32:11 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-16 09:32:11 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\update

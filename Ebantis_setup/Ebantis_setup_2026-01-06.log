@@ -1,0 +1,201 @@
+2026-01-06 21:31:51 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 21:31:51 | INFO | Running with administrative privileges.
+2026-01-06 21:31:52 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 21:31:53 | INFO | Executable name: python.exe
+2026-01-06 21:31:53 | WARNING | Could not extract branch_id from filename: python.exe
+2026-01-06 21:31:53 | ERROR | Failed to extract branch_id from executable filename.
+2026-01-06 21:31:53 | ERROR | Failed to initialize tenant information.
+2026-01-06 21:33:10 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 21:33:10 | INFO | Running with administrative privileges.
+2026-01-06 21:33:10 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 21:33:11 | INFO | Executable name: python.exe
+2026-01-06 21:33:11 | WARNING | Could not extract branch_id from filename: python.exe
+2026-01-06 21:33:11 | ERROR | Failed to extract branch_id from executable filename.
+2026-01-06 21:33:11 | ERROR | Failed to initialize tenant information.
+2026-01-06 21:34:55 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 21:34:55 | INFO | Running with administrative privileges.
+2026-01-06 21:34:56 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 21:34:56 | INFO | Authenticating to get access token...
+2026-01-06 21:34:57 | INFO | Access token obtained successfully.
+2026-01-06 21:34:57 | INFO | Fetching tenant info from API for branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:34:57 | INFO | Retrieved tenant info - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:34:57 | INFO | Tenant info saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2026-01-06 21:34:57 | INFO | Tenant info initialized - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:34:57 | INFO | Starting installation - branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 21:34:57 | INFO | Authenticating to get access token...
+2026-01-06 21:34:57 | INFO | Access token obtained successfully.
+2026-01-06 21:34:57 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 21:34:57 | ERROR | API request error while checking installation for tenant 3c24ce85-f892-4f91-98d0-a4475bf45e77: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 21:37:48 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 21:37:48 | INFO | Running with administrative privileges.
+2026-01-06 21:37:49 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 21:37:49 | INFO | Authenticating to get access token...
+2026-01-06 21:37:50 | INFO | Access token obtained successfully.
+2026-01-06 21:37:50 | INFO | Fetching tenant info from API for branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:37:50 | INFO | Retrieved tenant info - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:37:50 | INFO | Tenant info saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2026-01-06 21:37:50 | INFO | Tenant info initialized - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:37:50 | INFO | Starting installation - branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 21:37:50 | INFO | Authenticating to get access token...
+2026-01-06 21:37:50 | INFO | Access token obtained successfully.
+2026-01-06 21:37:50 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:37:50 | ERROR | API request error while checking installation for tenant 8b56528f-eedd-4d34-8250-a2b4a07763d4: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:39:34 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 21:39:34 | INFO | Running with administrative privileges.
+2026-01-06 21:39:35 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 21:39:35 | INFO | Authenticating to get access token...
+2026-01-06 21:39:36 | INFO | Access token obtained successfully.
+2026-01-06 21:39:36 | INFO | Fetching tenant info from API for branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:39:36 | INFO | Retrieved tenant info - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:39:36 | INFO | Tenant info saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2026-01-06 21:39:36 | INFO | Tenant info initialized - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:39:36 | INFO | Starting installation - branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 21:39:36 | INFO | Authenticating to get access token...
+2026-01-06 21:39:36 | INFO | Access token obtained successfully.
+2026-01-06 21:39:36 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 21:39:37 | ERROR | API request error while checking installation for tenant 8b56528f-eedd-4d34-8250-a2b4a07763d4: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/tenants/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:10:55 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 22:10:55 | INFO | Running with administrative privileges.
+2026-01-06 22:10:56 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 22:10:57 | INFO | Authenticating to get access token...
+2026-01-06 22:10:57 | INFO | Access token obtained successfully.
+2026-01-06 22:10:57 | INFO | Fetching tenant info from API for branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:10:57 | INFO | Retrieved tenant info - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:10:57 | INFO | Tenant info saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2026-01-06 22:10:57 | INFO | Tenant info initialized - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:10:57 | INFO | Starting installation - branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 22:10:57 | INFO | Authenticating to get access token...
+2026-01-06 22:10:58 | INFO | Access token obtained successfully.
+2026-01-06 22:10:58 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:10:58 | INFO | Installation allowed for tenant 8b56528f-eedd-4d34-8250-a2b4a07763d4 (12/200)
+2026-01-06 22:10:58 | INFO | Installation allowed. Proceeding to register the agent...
+2026-01-06 22:10:58 | INFO | Starting installation...
+2026-01-06 22:10:58 | INFO | InstallWorker started.
+2026-01-06 22:10:58 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2026-01-06 22:10:58 | INFO | EXE files found to terminate: ['AutoUpdationService.exe', 'EbantisV4.exe']
+2026-01-06 22:10:58 | INFO | Killing process EbantisV4.exe (PID 20128)
+2026-01-06 22:10:59 | INFO | All processes terminated: ['AutoUpdationService.exe', 'EbantisV4.exe']
+2026-01-06 22:11:01 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2026-01-06 22:11:04 | WARNING | Attempt 1: Error removing C:/Program Files/EbantisV4\data\EbantisV4: [WinError 3] The system cannot find the path specified: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\utils'
+2026-01-06 22:11:05 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4
+2026-01-06 22:11:05 | INFO | End_task completed successfully.
+2026-01-06 22:11:05 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2026-01-06 22:11:05 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2026-01-06 22:11:05 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2026-01-06 22:11:05 | INFO | Previous version removed successfully.
+2026-01-06 22:11:05 | INFO | Starting download of main and model packages in parallel.
+2026-01-06 22:11:05 | INFO | api_url: https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:11:05 | INFO | Authenticating to get access token...
+2026-01-06 22:11:05 | INFO | Access token obtained successfully.
+2026-01-06 22:11:05 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:11:05 | INFO | Latest Version_Id retrieved from API: v4.0.4
+2026-01-06 22:11:05 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2026-01-06 22:11:05 | INFO | Credentials successfully decoded from database.
+2026-01-06 22:11:05 | INFO | Authenticating to get access token...
+2026-01-06 22:11:06 | INFO | Access token obtained successfully.
+2026-01-06 22:11:06 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2026-01-06 22:11:06 | INFO | Payload: {'branchUniqueId': '8b56528f-eedd-4d34-8250-a2b4a07763d4', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2026-01-06T22:11:05.892867', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.4', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2026-01-06 22:11:06 | ERROR | API request failed while saving installation data for host GRIT-CLT-LT-254: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-installations
+2026-01-06 22:11:06 | INFO | Starting main package download from API...
+2026-01-06 22:11:06 | INFO | File size from API: 31 bytes
+2026-01-06 22:11:11 | INFO | Downloaded main package successfully.
+2026-01-06 22:11:11 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2026-01-06 22:11:19 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2026-01-06 22:12:07 | INFO | Main package extracted successfully.
+2026-01-06 22:12:07 | INFO | Authenticating to get access token...
+2026-01-06 22:12:07 | INFO | Access token obtained successfully.
+2026-01-06 22:12:07 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:12:08 | INFO | Latest Version_Id retrieved from API: v4.0.4
+2026-01-06 22:12:08 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2026-01-06 22:12:08 | INFO | Credentials successfully decoded from database.
+2026-01-06 22:12:08 | INFO | Authenticating to get access token...
+2026-01-06 22:12:08 | INFO | Access token obtained successfully.
+2026-01-06 22:12:08 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2026-01-06 22:12:08 | INFO | Payload: {'branchUniqueId': '8b56528f-eedd-4d34-8250-a2b4a07763d4', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2026-01-06T22:12:08.056859', 'isDownloaded': True, 'isInstalled': False, 'versionId': 'v4.0.4', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2026-01-06 22:12:08 | ERROR | API request failed while saving installation data for host GRIT-CLT-LT-254: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-installations
+2026-01-06 22:12:08 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2026-01-06 22:12:08 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2026-01-06 22:12:08 | INFO | Main package download/extraction result: True
+2026-01-06 22:12:08 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2026-01-06 22:12:08 | INFO | === Autostart Process Started ===
+2026-01-06 22:12:10 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2026-01-06 22:12:10 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2026-01-06 22:12:12 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2026-01-06 22:15:23 | INFO | No running instance found for: EbantisV4.exe
+2026-01-06 22:18:49 | INFO | No running instance found for: AutoUpdationService.exe
+2026-01-06 22:18:51 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2026-01-06 22:18:52 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\AutoUpdationService.exe
+2026-01-06 22:18:52 | INFO | Removed old startup shortcut: EbantisV4.lnk
+2026-01-06 22:18:52 | INFO | Removed old startup shortcut: AutoUpdationService.lnk
+2026-01-06 22:18:52 | INFO | Startup entries added for EbantisV4 and AutoUpdation.
+2026-01-06 22:18:52 | INFO | EbantisV4 and AutoUpdation successfully configured for autostart.
+2026-01-06 22:18:52 | INFO | === Autostart Process Finished ===
+2026-01-06 22:18:52 | INFO | Wazuh agent installation started.
+2026-01-06 22:21:11 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\Ebantis_setup_2026-01-06.log',)
+2026-01-06 22:21:11 | INFO | Running with administrative privileges.
+2026-01-06 22:21:11 | INFO | Starting Ebantis installer/uninstaller process...
+2026-01-06 22:21:12 | INFO | Authenticating to get access token...
+2026-01-06 22:21:13 | INFO | Access token obtained successfully.
+2026-01-06 22:21:13 | INFO | Fetching tenant info from API for branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:13 | INFO | Retrieved tenant info - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:13 | INFO | Tenant info saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2026-01-06 22:21:13 | INFO | Tenant info initialized - tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:13 | INFO | Starting installation - branch_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, company_id: 8b56528f-eedd-4d34-8250-a2b4a07763d4, tenant_id: 3c24ce85-f892-4f91-98d0-a4475bf45e77
+2026-01-06 22:21:13 | INFO | Authenticating to get access token...
+2026-01-06 22:21:14 | INFO | Access token obtained successfully.
+2026-01-06 22:21:14 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:14 | INFO | Installation allowed for tenant 8b56528f-eedd-4d34-8250-a2b4a07763d4 (12/200)
+2026-01-06 22:21:14 | INFO | Installation allowed. Proceeding to register the agent...
+2026-01-06 22:21:14 | INFO | Starting installation...
+2026-01-06 22:21:14 | INFO | InstallWorker started.
+2026-01-06 22:21:14 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2026-01-06 22:21:14 | INFO | EXE files found to terminate: ['AutoUpdationService.exe', 'EbantisV4.exe']
+2026-01-06 22:21:14 | INFO | Killing process AutoUpdationService.exe (PID 21912)
+2026-01-06 22:21:14 | INFO | Killing process AutoUpdationService.exe (PID 44880)
+2026-01-06 22:21:15 | INFO | All processes terminated: ['AutoUpdationService.exe', 'EbantisV4.exe']
+2026-01-06 22:21:17 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2026-01-06 22:21:19 | WARNING | Attempt 1: Error removing C:/Program Files/EbantisV4\data\EbantisV4: [WinError 3] The system cannot find the path specified: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\utils'
+2026-01-06 22:21:20 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4
+2026-01-06 22:21:20 | INFO | End_task completed successfully.
+2026-01-06 22:21:20 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2026-01-06 22:21:20 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2026-01-06 22:21:20 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2026-01-06 22:21:20 | INFO | Previous version removed successfully.
+2026-01-06 22:21:20 | INFO | Starting download of main and model packages in parallel.
+2026-01-06 22:21:20 | INFO | api_url: https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:20 | INFO | Authenticating to get access token...
+2026-01-06 22:21:21 | INFO | Access token obtained successfully.
+2026-01-06 22:21:21 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:21 | INFO | Latest Version_Id retrieved from API: v4.0.4
+2026-01-06 22:21:21 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2026-01-06 22:21:21 | INFO | Credentials successfully decoded from database.
+2026-01-06 22:21:21 | INFO | Authenticating to get access token...
+2026-01-06 22:21:21 | INFO | Access token obtained successfully.
+2026-01-06 22:21:21 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2026-01-06 22:21:21 | INFO | Payload: {'branchUniqueId': '8b56528f-eedd-4d34-8250-a2b4a07763d4', 'tenantUniqueId': '3c24ce85-f892-4f91-98d0-a4475bf45e77', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2026-01-06T22:21:21.461992', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.4', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2026-01-06 22:21:22 | ERROR | API request failed while saving installation data for host GRIT-CLT-LT-254: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-installations
+2026-01-06 22:21:22 | INFO | Starting main package download from API...
+2026-01-06 22:21:22 | INFO | File size from API: 31 bytes
+2026-01-06 22:21:26 | INFO | Downloaded main package successfully.
+2026-01-06 22:21:26 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2026-01-06 22:21:33 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2026-01-06 22:21:38 | INFO | Main package extracted successfully.
+2026-01-06 22:21:38 | INFO | Authenticating to get access token...
+2026-01-06 22:21:38 | INFO | Access token obtained successfully.
+2026-01-06 22:21:38 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/8b56528f-eedd-4d34-8250-a2b4a07763d4
+2026-01-06 22:21:39 | INFO | Latest Version_Id retrieved from API: v4.0.4
+2026-01-06 22:21:39 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2026-01-06 22:21:39 | INFO | Credentials successfully decoded from database.
+2026-01-06 22:21:39 | INFO | Authenticating to get access token...
+2026-01-06 22:21:39 | INFO | Access token obtained successfully.
+2026-01-06 22:21:39 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2026-01-06 22:21:39 | INFO | Payload: {'branchUniqueId': '8b56528f-eedd-4d34-8250-a2b4a07763d4', 'tenantUniqueId': '3c24ce85-f892-4f91-98d0-a4475bf45e77', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2026-01-06T22:21:39.042778', 'isDownloaded': True, 'isInstalled': False, 'versionId': 'v4.0.4', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2026-01-06 22:21:39 | ERROR | API request failed while saving installation data for host GRIT-CLT-LT-254: 500 Server Error: Internal Server Error for url: https://qaebantisv4service.thekosmoz.com/api/v1/app-installations
+2026-01-06 22:21:39 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2026-01-06 22:21:39 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2026-01-06 22:21:39 | INFO | Main package download/extraction result: True
+2026-01-06 22:21:39 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2026-01-06 22:21:39 | INFO | === Autostart Process Started ===
+2026-01-06 22:21:40 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2026-01-06 22:21:40 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2026-01-06 22:21:42 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4

@@ -1,0 +1,6 @@
+2026-01-06 22:18:55,026 - INFO - No data found in agent_registration table, using defaults
+2026-01-06 22:18:55,028 - INFO - Starting Ebantis V4 Auto Updater Service...
+2026-01-06 22:18:55,028 - INFO - Tenant: default_tenant ()
+2026-01-06 22:18:55,028 - INFO - Hostname: GRIT-CLT-LT-254
+2026-01-06 22:18:55,028 - ERROR - Tenant unique ID not found. Cannot check for updates.
+2026-01-06 22:18:55,028 - INFO - Update check completed. Waiting 5 minutes before next check...

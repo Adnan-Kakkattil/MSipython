@@ -1,0 +1,464 @@
+2025-12-22 12:40:51 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:40:51 | INFO | Running with administrative privileges.
+2025-12-22 12:40:52 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 12:40:53 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-22 12:40:53 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=infosys ltd for tenant: infosys ltd
+2025-12-22 12:40:53 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:40:53 | INFO | API credentials successfully stored in SQLite.
+2025-12-22 12:40:53 | INFO | SQLite connection closed.
+2025-12-22 12:40:53 | INFO | Credentials successfully decrypted.
+2025-12-22 12:40:53 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Deloite Technologies
+2025-12-22 12:40:54 | ERROR | API request error while fetching Tenant ID for 'Deloite Technologies': 401 Client Error: Unauthorized for url: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Deloite%20Technologies
+2025-12-22 12:40:54 | INFO | Tenant name 'None' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 12:40:54 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/None
+2025-12-22 12:40:54 | ERROR | API request error while checking installation for tenant None: 401 Client Error: Unauthorized for url: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/None
+2025-12-22 12:44:48 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:44:48 | INFO | Running with administrative privileges.
+2025-12-22 12:44:49 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 12:44:49 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-22 12:44:49 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=None for tenant: None
+2025-12-22 12:44:49 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:44:49 | INFO | API credentials successfully stored in SQLite.
+2025-12-22 12:44:49 | INFO | SQLite connection closed.
+2025-12-22 12:44:49 | INFO | Credentials successfully decrypted.
+2025-12-22 12:44:49 | INFO | Authenticating to get access token...
+2025-12-22 12:44:50 | INFO | Access token obtained successfully.
+2025-12-22 12:44:50 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Deloite Technologies
+2025-12-22 12:44:50 | INFO | Tenant Unique ID found for 'Deloite Technologies': 1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:44:50 | INFO | Tenant name '1087b659-9eeb-427b-a977-ee3226b0892d' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 12:44:50 | INFO | Authenticating to get access token...
+2025-12-22 12:44:51 | INFO | Access token obtained successfully.
+2025-12-22 12:44:51 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:44:51 | INFO | Installation allowed for tenant 1087b659-9eeb-427b-a977-ee3226b0892d (0/200)
+2025-12-22 12:44:51 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 12:44:51 | INFO | Registering agent at: https://ebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 12:44:51 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 12:44:51 | INFO | Register Agent API returned status: 200
+2025-12-22 12:44:51 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '1', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 12:44:51 | INFO | Starting installation...
+2025-12-22 12:44:51 | INFO | InstallWorker started.
+2025-12-22 12:44:51 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 12:44:51 | INFO | EXE files found to terminate: []
+2025-12-22 12:44:53 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 12:44:53 | INFO | End_task completed successfully.
+2025-12-22 12:44:53 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 12:44:53 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-22.log'
+2025-12-22 12:44:53 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 12:44:53 | INFO | Previous version removed successfully.
+2025-12-22 12:44:53 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 12:44:53 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:44:53 | INFO | Credentials successfully decoded from database.
+2025-12-22 12:44:53 | INFO | Authenticating to get access token...
+2025-12-22 12:44:54 | INFO | Access token obtained successfully.
+2025-12-22 12:44:54 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/None
+2025-12-22 12:44:54 | ERROR | API request error while fetching Tenant ID for 'None': Expecting value: line 1 column 1 (char 0)
+2025-12-22 12:44:54 | ERROR | Failed to get tenant_id for tenant: None
+2025-12-22 12:44:54 | WARNING | Download failed; skipping cleanup.
+2025-12-22 12:44:54 | INFO | Main package download/extraction result: False
+2025-12-22 12:44:54 | ERROR | One or more package downloads/extractions failed.
+2025-12-22 12:47:53 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:47:53 | INFO | Running with administrative privileges.
+2025-12-22 12:47:54 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 12:47:54 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-22 12:47:54 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=None for tenant: None
+2025-12-22 12:47:54 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:47:54 | INFO | API credentials successfully stored in SQLite.
+2025-12-22 12:47:54 | INFO | SQLite connection closed.
+2025-12-22 12:47:54 | INFO | Credentials successfully decrypted.
+2025-12-22 12:47:54 | INFO | Authenticating to get access token...
+2025-12-22 12:47:55 | INFO | Access token obtained successfully.
+2025-12-22 12:47:55 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Deloite Technologies
+2025-12-22 12:47:55 | INFO | Tenant Unique ID found for 'Deloite Technologies': 1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:47:55 | INFO | Tenant name '1087b659-9eeb-427b-a977-ee3226b0892d' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 12:47:55 | INFO | Authenticating to get access token...
+2025-12-22 12:47:56 | INFO | Access token obtained successfully.
+2025-12-22 12:47:56 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:47:56 | INFO | Installation allowed for tenant 1087b659-9eeb-427b-a977-ee3226b0892d (0/200)
+2025-12-22 12:47:56 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 12:47:56 | INFO | Registering agent at: https://ebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 12:47:56 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 12:47:57 | INFO | Register Agent API returned status: 200
+2025-12-22 12:47:57 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '1', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 12:47:57 | INFO | Starting installation...
+2025-12-22 12:47:57 | INFO | InstallWorker started.
+2025-12-22 12:47:57 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 12:47:57 | INFO | EXE files found to terminate: []
+2025-12-22 12:47:59 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 12:47:59 | INFO | End_task completed successfully.
+2025-12-22 12:47:59 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 12:47:59 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-22.log'
+2025-12-22 12:47:59 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 12:47:59 | INFO | Previous version removed successfully.
+2025-12-22 12:47:59 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 12:47:59 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:47:59 | INFO | Credentials successfully decoded from database.
+2025-12-22 12:47:59 | INFO | Authenticating to get access token...
+2025-12-22 12:47:59 | INFO | Access token obtained successfully.
+2025-12-22 12:47:59 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/None
+2025-12-22 12:47:59 | ERROR | API request error while fetching Tenant ID for 'None': Expecting value: line 1 column 1 (char 0)
+2025-12-22 12:47:59 | ERROR | Failed to get tenant_id for tenant: None
+2025-12-22 12:47:59 | WARNING | Download failed; skipping cleanup.
+2025-12-22 12:47:59 | INFO | Main package download/extraction result: False
+2025-12-22 12:47:59 | ERROR | One or more package downloads/extractions failed.
+2025-12-22 12:53:47 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:53:47 | INFO | Running with administrative privileges.
+2025-12-22 12:53:47 | ERROR | Fatal error in setup launcher: cannot import name get_tenant_name_from_json
+2025-12-22 12:54:25 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:54:25 | INFO | Running with administrative privileges.
+2025-12-22 12:54:26 | ERROR | Fatal error in setup launcher: cannot import name get_tenant_name_from_json
+2025-12-22 12:56:32 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:56:32 | INFO | Running with administrative privileges.
+2025-12-22 12:56:32 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 12:56:33 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-22 12:56:33 | ERROR | Unexpected error during service connection: name 'get_tenant_name_from_json' is not defined
+Traceback (most recent call last):
+
+  File "D:\Gritstone.Ebantistrack.EbantisV4.EXE\Ebantis_setup copy\installation_run.py", line 20, in <module>
+    main()
+    └ <cyfunction main at 0x00000251F76ACE10>
+
+> File "utils\\service.pyx", line 39, in utils.service.connect_service
+    api_url = get_api_url()
+              └ <function get_api_url at 0x00000251F58FAB00>
+
+  File "D:\Gritstone.Ebantistrack.EbantisV4.EXE\Ebantis_setup copy\utils\config.py", line 177, in get_api_url
+    tenant_name = get_tenant_name_from_json()
+
+NameError: name 'get_tenant_name_from_json' is not defined
+2025-12-22 12:56:33 | ERROR | Failed to retrieve necessary configuration data.
+2025-12-22 12:59:35 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 12:59:35 | INFO | Running with administrative privileges.
+2025-12-22 12:59:35 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 12:59:36 | INFO | Starting installation with tenant name: Deloite Technologies
+2025-12-22 12:59:36 | INFO | Authenticating to get access token...
+2025-12-22 12:59:38 | INFO | Access token obtained successfully.
+2025-12-22 12:59:38 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Deloite Technologies
+2025-12-22 12:59:38 | INFO | Tenant Unique ID found for 'Deloite Technologies': 1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:59:38 | INFO | Tenant name '1087b659-9eeb-427b-a977-ee3226b0892d' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 12:59:38 | INFO | Authenticating to get access token...
+2025-12-22 12:59:38 | INFO | Access token obtained successfully.
+2025-12-22 12:59:38 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:59:39 | INFO | Installation allowed for tenant 1087b659-9eeb-427b-a977-ee3226b0892d (0/200)
+2025-12-22 12:59:39 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 12:59:39 | INFO | Registering agent at: https://ebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 12:59:39 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 12:59:39 | INFO | Register Agent API returned status: 200
+2025-12-22 12:59:39 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '1', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 12:59:39 | INFO | Starting installation...
+2025-12-22 12:59:39 | INFO | InstallWorker started.
+2025-12-22 12:59:39 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 12:59:39 | INFO | EXE files found to terminate: []
+2025-12-22 12:59:41 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 12:59:41 | INFO | End_task completed successfully.
+2025-12-22 12:59:41 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 12:59:41 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-22.log'
+2025-12-22 12:59:41 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 12:59:41 | INFO | Previous version removed successfully.
+2025-12-22 12:59:41 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 12:59:41 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:59:41 | INFO | Credentials successfully decoded from database.
+2025-12-22 12:59:41 | INFO | api_url
+2025-12-22 12:59:41 | INFO | Authenticating to get access token...
+2025-12-22 12:59:41 | INFO | Access token obtained successfully.
+2025-12-22 12:59:41 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/1087b659-9eeb-427b-a977-ee3226b0892d
+2025-12-22 12:59:41 | INFO | Latest Version_Id retrieved from API: v4.0.0
+2025-12-22 12:59:41 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 12:59:41 | INFO | Credentials successfully decoded from database.
+2025-12-22 12:59:41 | INFO | Authenticating to get access token...
+2025-12-22 12:59:42 | INFO | Access token obtained successfully.
+2025-12-22 12:59:42 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 12:59:42 | INFO | Payload: {'tenantUniqueId': '1087b659-9eeb-427b-a977-ee3226b0892d', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T12:59:41.944195', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.0', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 12:59:42 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 12:59:42 | INFO | Starting main package download from API...
+2025-12-22 12:59:42 | INFO | File size from API: 31 bytes
+2025-12-22 12:59:46 | INFO | Downloaded main package successfully.
+2025-12-22 12:59:46 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-22 12:59:46 | ERROR | Error during robust zip extraction to C:/Program Files/EbantisV4\data: [Errno 13] Permission denied: 'C:\\Program Files\\EbantisV4\\data\\EbantisV4\\EbantisV4.exe'
+2025-12-22 12:59:46 | ERROR | Main package download/extraction failed: [Errno 13] Permission denied: 'C:\\Program Files\\EbantisV4\\data\\EbantisV4\\EbantisV4.exe'
+2025-12-22 12:59:47 | WARNING | Download failed; skipping cleanup.
+2025-12-22 12:59:47 | INFO | Main package download/extraction result: False
+2025-12-22 12:59:47 | ERROR | One or more package downloads/extractions failed.
+2025-12-22 13:10:26 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 13:10:26 | INFO | Running with administrative privileges.
+2025-12-22 13:10:26 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 13:10:27 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 13:10:27 | INFO | Authenticating to get access token...
+2025-12-22 13:10:28 | INFO | Access token obtained successfully.
+2025-12-22 13:10:28 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Infosys Ltd
+2025-12-22 13:10:28 | INFO | Tenant Unique ID found for 'Infosys Ltd': 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:10:28 | INFO | Tenant name '25d21528-0bab-452b-a988-68d2f6b4ffdd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 13:10:28 | INFO | Authenticating to get access token...
+2025-12-22 13:10:28 | INFO | Access token obtained successfully.
+2025-12-22 13:10:28 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:10:29 | INFO | Installation allowed for tenant 25d21528-0bab-452b-a988-68d2f6b4ffdd (0/200)
+2025-12-22 13:10:29 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 13:10:29 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 13:10:29 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 13:10:29 | INFO | Register Agent API returned status: 200
+2025-12-22 13:10:29 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '23', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 13:10:29 | INFO | Starting installation...
+2025-12-22 13:10:29 | INFO | InstallWorker started.
+2025-12-22 13:10:29 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 13:10:29 | INFO | EXE files found to terminate: []
+2025-12-22 13:10:31 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 13:10:31 | INFO | End_task completed successfully.
+2025-12-22 13:10:31 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 13:10:31 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2025-12-22 13:10:31 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 13:10:31 | INFO | Previous version removed successfully.
+2025-12-22 13:10:31 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 13:10:31 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 13:10:31 | ERROR | Error decoding data from database: no such table: api_data
+2025-12-22 13:10:31 | ERROR | Failed to fetch or decode credentials from SQLite.
+2025-12-22 13:10:31 | WARNING | Download failed; skipping cleanup.
+2025-12-22 13:10:31 | INFO | Main package download/extraction result: False
+2025-12-22 13:10:31 | ERROR | One or more package downloads/extractions failed.
+2025-12-22 13:18:08 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 13:18:08 | INFO | Running with administrative privileges.
+2025-12-22 13:18:08 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 13:18:09 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 13:18:09 | INFO | Authenticating to get access token...
+2025-12-22 13:18:10 | INFO | Access token obtained successfully.
+2025-12-22 13:18:10 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Infosys Ltd
+2025-12-22 13:18:10 | INFO | Tenant Unique ID found for 'Infosys Ltd': 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:18:10 | INFO | Tenant name '25d21528-0bab-452b-a988-68d2f6b4ffdd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 13:18:10 | INFO | Authenticating to get access token...
+2025-12-22 13:18:11 | INFO | Access token obtained successfully.
+2025-12-22 13:18:11 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:18:11 | INFO | Installation allowed for tenant 25d21528-0bab-452b-a988-68d2f6b4ffdd (0/200)
+2025-12-22 13:18:11 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 13:18:11 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 13:18:11 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 13:18:11 | INFO | Register Agent API returned status: 200
+2025-12-22 13:18:11 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '23', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 13:18:11 | INFO | Starting installation...
+2025-12-22 13:18:11 | INFO | InstallWorker started.
+2025-12-22 13:18:11 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 13:18:11 | INFO | EXE files found to terminate: []
+2025-12-22 13:18:13 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 13:18:13 | INFO | End_task completed successfully.
+2025-12-22 13:18:13 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 13:18:13 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2025-12-22 13:18:13 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 13:18:13 | INFO | Previous version removed successfully.
+2025-12-22 13:18:13 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 13:18:13 | INFO | api_url: https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion
+2025-12-22 13:18:13 | INFO | Authenticating to get access token...
+2025-12-22 13:18:14 | INFO | Access token obtained successfully.
+2025-12-22 13:18:14 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:18:14 | INFO | Latest Version_Id retrieved from API: v4.0.0
+2025-12-22 13:18:14 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 13:18:14 | ERROR | Error decoding data from database: no such table: api_data
+2025-12-22 13:18:14 | INFO | Authenticating to get access token...
+2025-12-22 13:18:14 | INFO | Access token obtained successfully.
+2025-12-22 13:18:14 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 13:18:14 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T13:18:14.312073', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.0', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 13:18:14 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 13:18:14 | INFO | Starting main package download from API...
+2025-12-22 13:18:15 | INFO | File size from API: 31 bytes
+2025-12-22 13:18:19 | INFO | Downloaded main package successfully.
+2025-12-22 13:18:19 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-22 13:18:25 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2025-12-22 13:18:25 | INFO | Main package extracted successfully.
+2025-12-22 13:18:25 | INFO | Authenticating to get access token...
+2025-12-22 13:18:26 | INFO | Access token obtained successfully.
+2025-12-22 13:18:26 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:18:26 | INFO | Latest Version_Id retrieved from API: v4.0.0
+2025-12-22 13:18:26 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 13:18:26 | ERROR | Error decoding data from database: no such table: api_data
+2025-12-22 13:18:26 | INFO | Authenticating to get access token...
+2025-12-22 13:18:26 | INFO | Access token obtained successfully.
+2025-12-22 13:18:26 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 13:18:26 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T13:18:26.536807', 'isDownloaded': True, 'isInstalled': False, 'versionId': 'v4.0.0', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 13:18:27 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 13:18:27 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2025-12-22 13:18:27 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2025-12-22 13:18:27 | INFO | Main package download/extraction result: True
+2025-12-22 13:18:27 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2025-12-22 13:18:27 | INFO | === Autostart Process Started ===
+2025-12-22 13:18:27 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2025-12-22 13:18:27 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2025-12-22 13:18:28 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2025-12-22 13:18:55 | INFO | No running EbantisV4.exe found.
+2025-12-22 13:18:57 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2025-12-22 13:18:57 | INFO | Removed old shortcut: EbantisV4.lnk
+2025-12-22 13:18:57 | INFO | Added EbantisV4.exe to Windows Startup.
+2025-12-22 13:18:57 | INFO | EbantisV4.exe successfully configured for autostart.
+2025-12-22 13:18:57 | INFO | === Autostart Process Finished ===
+2025-12-22 13:18:57 | INFO | Wazuh agent installation started.
+2025-12-22 13:19:13 | INFO | Service 'WazuhSvc' status: running
+2025-12-22 13:19:13 | INFO | OSSEC agent directory found: C:\Program Files (x86)\ossec-agent
+2025-12-22 13:19:13 | INFO | Wazuh agent installed and running successfully.
+2025-12-22 13:19:13 | INFO | Authenticating to get access token...
+2025-12-22 13:19:13 | INFO | Access token obtained successfully.
+2025-12-22 13:19:13 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:19:14 | INFO | Latest Version_Id retrieved from API: v4.0.0
+2025-12-22 13:19:14 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 13:19:14 | INFO | Credentials successfully decoded from database.
+2025-12-22 13:19:14 | INFO | Authenticating to get access token...
+2025-12-22 13:19:14 | INFO | Access token obtained successfully.
+2025-12-22 13:19:14 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 13:19:14 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T13:19:14.291796', 'isDownloaded': True, 'isInstalled': True, 'versionId': 'v4.0.0', 'status': 'installed', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 13:19:15 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 13:19:15 | INFO | Authenticating to get access token...
+2025-12-22 13:19:15 | INFO | Access token obtained successfully.
+2025-12-22 13:19:15 | INFO | Updating installed device count for tenant_id: 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:19:15 | ERROR | API request error while updating device count for tenant_id 25d21528-0bab-452b-a988-68d2f6b4ffdd: 404 Client Error: Not Found for url: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/IncrementInstalledDeviceCount/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:19:15 | INFO | Installed device count update: False, message: API request error while updating device count for tenant_id 25d21528-0bab-452b-a988-68d2f6b4ffdd: 404 Client Error: Not Found for url: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/IncrementInstalledDeviceCount/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 13:19:15 | INFO | Installation completed successfully.
+2025-12-22 15:23:10 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 15:23:10 | INFO | Running with administrative privileges.
+2025-12-22 15:23:10 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 15:23:11 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 15:23:11 | INFO | Authenticating to get access token...
+2025-12-22 15:23:12 | INFO | Access token obtained successfully.
+2025-12-22 15:23:12 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Infosys Ltd
+2025-12-22 15:23:12 | INFO | Tenant Unique ID found for 'Infosys Ltd': 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:23:12 | INFO | Tenant name '25d21528-0bab-452b-a988-68d2f6b4ffdd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 15:23:12 | INFO | Authenticating to get access token...
+2025-12-22 15:23:12 | INFO | Access token obtained successfully.
+2025-12-22 15:23:12 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:23:12 | INFO | Installation allowed for tenant 25d21528-0bab-452b-a988-68d2f6b4ffdd (0/200)
+2025-12-22 15:23:12 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 15:23:12 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 15:23:12 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 15:23:13 | INFO | Register Agent API returned status: 200
+2025-12-22 15:23:13 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '23', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 15:23:13 | INFO | Starting installation...
+2025-12-22 15:23:13 | INFO | InstallWorker started.
+2025-12-22 15:23:13 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 15:23:13 | INFO | EXE files found to terminate: []
+2025-12-22 15:23:15 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 15:23:15 | INFO | End_task completed successfully.
+2025-12-22 15:23:15 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 15:23:15 | ERROR | Error removing C:/Program Files/EbantisV4\data: [WinError 32] The process cannot access the file because it is being used by another process: 'C:/Program Files/EbantisV4\\data\\EbantisV4\\EbantisTracker_2025-12-22.log'
+2025-12-22 15:23:15 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 15:23:15 | INFO | Previous version removed successfully.
+2025-12-22 15:23:15 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 15:23:15 | INFO | api_url: https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion
+2025-12-22 15:23:15 | INFO | Authenticating to get access token...
+2025-12-22 15:23:15 | INFO | Access token obtained successfully.
+2025-12-22 15:23:15 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:23:15 | INFO | Latest Version_Id retrieved from API: v4.0.2
+2025-12-22 15:23:15 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 15:23:15 | INFO | Credentials successfully decoded from database.
+2025-12-22 15:23:15 | INFO | Authenticating to get access token...
+2025-12-22 15:23:16 | INFO | Access token obtained successfully.
+2025-12-22 15:23:16 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 15:23:16 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T15:23:15.978722', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.2', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 15:23:16 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 15:23:16 | INFO | Starting main package download from API...
+2025-12-22 15:23:16 | INFO | File size from API: 31 bytes
+2025-12-22 15:23:22 | INFO | Downloaded main package successfully.
+2025-12-22 15:23:22 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-22 15:23:22 | ERROR | Error during robust zip extraction to C:/Program Files/EbantisV4\data: [Errno 13] Permission denied: 'C:\\Program Files\\EbantisV4\\data\\EbantisV4\\EbantisV4.exe'
+2025-12-22 15:23:22 | ERROR | Main package download/extraction failed: [Errno 13] Permission denied: 'C:\\Program Files\\EbantisV4\\data\\EbantisV4\\EbantisV4.exe'
+2025-12-22 15:23:23 | WARNING | Download failed; skipping cleanup.
+2025-12-22 15:23:23 | INFO | Main package download/extraction result: False
+2025-12-22 15:23:23 | ERROR | One or more package downloads/extractions failed.
+2025-12-22 15:24:49 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 15:24:49 | INFO | Running with administrative privileges.
+2025-12-22 15:24:51 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 15:24:51 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 15:24:51 | INFO | Authenticating to get access token...
+2025-12-22 15:24:52 | INFO | Access token obtained successfully.
+2025-12-22 15:24:52 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Infosys Ltd
+2025-12-22 15:24:52 | INFO | Tenant Unique ID found for 'Infosys Ltd': 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:24:52 | INFO | Tenant name '25d21528-0bab-452b-a988-68d2f6b4ffdd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 15:24:52 | INFO | Authenticating to get access token...
+2025-12-22 15:26:16 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup copy\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 15:26:16 | INFO | Running with administrative privileges.
+2025-12-22 15:26:16 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 15:26:17 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 15:26:17 | INFO | Authenticating to get access token...
+2025-12-22 15:26:17 | INFO | Access token obtained successfully.
+2025-12-22 15:26:17 | INFO | Fetching tenant unique ID from API: https://qaebantisv4service.thekosmoz.com/api/v1/Tenant/GetTenantByName/Infosys Ltd
+2025-12-22 15:26:17 | INFO | Tenant Unique ID found for 'Infosys Ltd': 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:26:17 | INFO | Tenant name '25d21528-0bab-452b-a988-68d2f6b4ffdd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 15:26:17 | INFO | Authenticating to get access token...
+2025-12-22 15:26:18 | INFO | Access token obtained successfully.
+2025-12-22 15:26:18 | INFO | Fetching app version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:26:18 | INFO | Installation allowed for tenant 25d21528-0bab-452b-a988-68d2f6b4ffdd (0/200)
+2025-12-22 15:26:18 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 15:26:18 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 15:26:18 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin'}
+2025-12-22 15:26:18 | INFO | Register Agent API returned status: 200
+2025-12-22 15:26:18 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '23', 'tenant_id': 0, 'tenant_name': '', 'tenant_unique_id': '', 'company_unique_id': '', 'branch_unique_id': '', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 15:26:18 | INFO | Starting installation...
+2025-12-22 15:26:18 | INFO | InstallWorker started.
+2025-12-22 15:26:18 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 15:26:18 | INFO | EXE files found to terminate: []
+2025-12-22 15:26:20 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 15:26:20 | INFO | End_task completed successfully.
+2025-12-22 15:26:20 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 15:26:21 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2025-12-22 15:26:21 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 15:26:21 | INFO | Previous version removed successfully.
+2025-12-22 15:26:21 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 15:26:21 | INFO | api_url: https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion
+2025-12-22 15:26:21 | INFO | Authenticating to get access token...
+2025-12-22 15:26:21 | INFO | Access token obtained successfully.
+2025-12-22 15:26:21 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:26:21 | INFO | Latest Version_Id retrieved from API: v4.0.2
+2025-12-22 15:26:21 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 15:26:21 | INFO | Credentials successfully decoded from database.
+2025-12-22 15:26:21 | INFO | Authenticating to get access token...
+2025-12-22 15:26:22 | INFO | Access token obtained successfully.
+2025-12-22 15:26:22 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 15:26:22 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T15:26:21.982787', 'isDownloaded': False, 'isInstalled': False, 'versionId': 'v4.0.2', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 15:26:22 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 15:26:22 | INFO | Starting main package download from API...
+2025-12-22 15:26:23 | INFO | File size from API: 31 bytes
+2025-12-22 15:26:28 | INFO | Downloaded main package successfully.
+2025-12-22 15:26:28 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-22 15:26:31 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2025-12-22 15:26:31 | INFO | Main package extracted successfully.
+2025-12-22 15:26:31 | INFO | Authenticating to get access token...
+2025-12-22 15:26:32 | INFO | Access token obtained successfully.
+2025-12-22 15:26:32 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:26:32 | INFO | Latest Version_Id retrieved from API: v4.0.2
+2025-12-22 15:26:32 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 15:26:32 | INFO | Credentials successfully decoded from database.
+2025-12-22 15:26:32 | INFO | Authenticating to get access token...
+2025-12-22 15:26:32 | INFO | Access token obtained successfully.
+2025-12-22 15:26:32 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 15:26:32 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T15:26:32.293829', 'isDownloaded': True, 'isInstalled': False, 'versionId': 'v4.0.2', 'status': 'inprogress', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 15:26:32 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 15:26:32 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2025-12-22 15:26:32 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2025-12-22 15:26:32 | INFO | Main package download/extraction result: True
+2025-12-22 15:26:32 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2025-12-22 15:26:32 | INFO | === Autostart Process Started ===
+2025-12-22 15:26:33 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2025-12-22 15:26:33 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2025-12-22 15:26:33 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2025-12-22 15:26:55 | INFO | No running EbantisV4.exe found.
+2025-12-22 15:26:57 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2025-12-22 15:26:58 | INFO | Removed old shortcut: EbantisV4.lnk
+2025-12-22 15:26:58 | INFO | Added EbantisV4.exe to Windows Startup.
+2025-12-22 15:26:58 | INFO | EbantisV4.exe successfully configured for autostart.
+2025-12-22 15:26:58 | INFO | === Autostart Process Finished ===
+2025-12-22 15:26:58 | INFO | Wazuh agent installation started.
+2025-12-22 15:27:16 | INFO | Service 'WazuhSvc' status: running
+2025-12-22 15:27:16 | INFO | OSSEC agent directory found: C:\Program Files (x86)\ossec-agent
+2025-12-22 15:27:16 | INFO | Wazuh agent installed and running successfully.
+2025-12-22 15:27:16 | INFO | Authenticating to get access token...
+2025-12-22 15:27:16 | INFO | Access token obtained successfully.
+2025-12-22 15:27:16 | INFO | Fetching version details from API: https://qaebantisv4service.thekosmoz.com/api/v1/AppVersion/GetAppVersionByTenantId/25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:27:16 | INFO | Latest Version_Id retrieved from API: v4.0.2
+2025-12-22 15:27:16 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 15:27:16 | INFO | Credentials successfully decoded from database.
+2025-12-22 15:27:16 | INFO | Authenticating to get access token...
+2025-12-22 15:27:17 | INFO | Access token obtained successfully.
+2025-12-22 15:27:17 | INFO | Saving installation data to API for host: GRIT-CLT-LT-254
+2025-12-22 15:27:17 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'hostName': 'GRIT-CLT-LT-254', 'installedOn': '2025-12-22T15:27:16.761995', 'isDownloaded': True, 'isInstalled': True, 'versionId': 'v4.0.2', 'status': 'installed', 'userName': 'gritlocaladmin', 'userExternalId': 0, 'email': ''}
+2025-12-22 15:27:17 | INFO | Installation data saved successfully for host: GRIT-CLT-LT-254
+2025-12-22 15:27:17 | INFO | Authenticating to get access token...
+2025-12-22 15:27:17 | INFO | Access token obtained successfully.
+2025-12-22 15:27:17 | INFO | Updating installed device count for tenant_id: 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:27:17 | INFO | Payload: {'tenantUniqueId': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'installedDeviceCount': 1}
+2025-12-22 15:27:18 | INFO | Installed device count updated successfully for tenant_id: 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:27:18 | INFO | Installed device count update: True, message: Installed device count updated successfully for tenant_id: 25d21528-0bab-452b-a988-68d2f6b4ffdd
+2025-12-22 15:27:18 | INFO | Installation completed successfully.
+2025-12-22 15:27:23 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 15:27:23 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\update
