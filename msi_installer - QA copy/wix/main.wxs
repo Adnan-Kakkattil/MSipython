@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" 
+             Name="Ebantis V4 Installer" 
+             Language="1033" 
+             Version="4.0.0" 
+             Manufacturer="Ebantis" 
+             UpgradeCode="B8B8B8B8-B8B8-B8B8-B8B8-B8B8B8B8B8B8">
+        
+        <Package InstallerVersion="200" 
+                 Compressed="yes" 
+                 InstallScope="perMachine"
+                 Description="Ebantis V4 Agent Installation"
+                 Comments="Installs Ebantis V4 Agent using PowerShell installer script"/>
+        
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        
+        <MediaTemplate EmbedCab="yes" />
+        
+        <!-- Property to store MSI filename (will be set by custom action) -->
+        <Property Id="MSI_FILENAME" Secure="yes" />
+        
+        <!-- Installer executable -->
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="INSTALLFOLDER" Name="EbantisV4">
+                    <Component Id="InstallerExe" Guid="A1A1A1A1-A1A1-A1A1-A1A1-A1A1A1A1A1A1">
+                        <File Id="InstallerExeFile" 
+                              Source="target\x86_64-pc-windows-msvc\release\ebantis-msi-installer.exe" 
+                              KeyPath="yes"/>
+                    </Component>
+                    
+                    <!-- PowerShell installer script -->
+                    <Component Id="InstallerScript" Guid="B2B2B2B2-B2B2-B2B2-B2B2-B2B2B2B2B2B2">
+                        <File Id="InstallerScriptFile" 
+                              Source="installer.ps1" 
+                              KeyPath="yes"/>
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+        
+        <!-- Set property to pass OriginalDatabase (MSI filename) to executable -->
+        <CustomAction Id="SetMsiFilename" 
+                      Property="MSI_FILENAME" 
+                      Value="[OriginalDatabase]" 
+                      Execute="immediate"/>
+        
+        <!-- Custom action to run installer with MSI filename as argument -->
+        <CustomAction Id="RunInstaller" 
+                      Directory="INSTALLFOLDER" 
+                      ExeCommand='"[INSTALLFOLDER]ebantis-msi-installer.exe" "[MSI_FILENAME]"' 
+                      Execute="deferred" 
+                      Impersonate="no" 
+                      Return="asyncWait"/>
+        
+        <InstallExecuteSequence>
+            <Custom Action="SetMsiFilename" After="InstallInitialize">NOT Installed</Custom>
+            <Custom Action="RunInstaller" After="InstallFiles">NOT Installed</Custom>
+        </InstallExecuteSequence>
+        
+        <Feature Id="ProductFeature" Title="Ebantis V4 Installer" Level="1">
+            <ComponentRef Id="InstallerExe" />
+            <ComponentRef Id="InstallerScript" />
+        </Feature>
+        
+        <UI>
+            <UIRef Id="WixUI_Minimal" />
+            <Publish Dialog="ExitDialog" 
+                     Control="Finish" 
+                     Event="DoAction" 
+                     Value="RunInstaller" 
+                     Order="999">1</Publish>
+        </UI>
+        
+    </Product>
+</Wix>
+

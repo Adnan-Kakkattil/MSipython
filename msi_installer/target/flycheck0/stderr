@@ -1,10 +1,5 @@
-   0.040339900s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs"
-   0.040375300s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\target\\x86_64-pc-windows-msvc\\debug\\.fingerprint\\ebantis-msi-installer-3e20995891a0cf86\\dep-bin-ebantis-msi-installer"
-   0.040380800s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13412360250, nanos: 419703000 } < FileTime { seconds: 13412360412, nanos: 815634900 }
-   0.041770200s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint: fingerprint dirty for ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer)/Check { test: false }/TargetInner { name: "ebantis-msi-installer", doc: true, ..: with_path("C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs", Edition2021) }
-   0.041814500s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\target\\x86_64-pc-windows-msvc\\debug\\.fingerprint\\ebantis-msi-installer-3e20995891a0cf86\\dep-bin-ebantis-msi-installer", reference_mtime: FileTime { seconds: 13412360250, nanos: 419703000 }, stale: "C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs", stale_mtime: FileTime { seconds: 13412360412, nanos: 815634900 } }))
-   0.045699900s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint: fingerprint error for ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer)/Check { test: true }/TargetInner { name: "ebantis-msi-installer", doc: true, ..: with_path("C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs", Edition2021) }
-   0.045715800s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\adnan\Desktop\MSipython\msi_installer\target\x86_64-pc-windows-msvc\debug\.fingerprint\ebantis-msi-installer-f801491956a0d52f\test-bin-ebantis-msi-installer`
+   0.064990700s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint: fingerprint error for ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer)/Check { test: false }/TargetInner { name: "ebantis-msi-installer", doc: true, ..: with_path("C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs", Edition2021) }
+   0.065022600s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\adnan\Desktop\MSipython\msi_installer\target\x86_64-pc-windows-msvc\debug\.fingerprint\ebantis-msi-installer-3e35cca1e7e88c8a\bin-ebantis-msi-installer`
 
 Caused by:
     The system cannot find the file specified. (os error 2)
@@ -31,5 +26,63 @@ Stack backtrace:
   18: git_midx_writer_dump
   19: BaseThreadInitThunk
   20: RtlUserThreadStart
+   0.071320600s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="winapi"}: cargo::core::compiler::fingerprint: fingerprint error for winapi v0.3.9/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("winapi", ["lib"], "C:\\Users\\adnan\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\winapi-0.3.9\\src\\lib.rs", Edition2015) }
+   0.071350200s  INFO prepare_target{force=false package_id=winapi v0.3.9 target="winapi"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\adnan\Desktop\MSipython\msi_installer\target\x86_64-pc-windows-msvc\debug\.fingerprint\winapi-f74331c00be18c39\lib-winapi`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.072131900s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint: fingerprint error for ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer)/Check { test: true }/TargetInner { name: "ebantis-msi-installer", doc: true, ..: with_path("C:\\Users\\adnan\\Desktop\\MSipython\\msi_installer\\src\\main.rs", Edition2021) }
+   0.072144700s  INFO prepare_target{force=false package_id=ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer) target="ebantis-msi-installer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\adnan\Desktop\MSipython\msi_installer\target\x86_64-pc-windows-msvc\debug\.fingerprint\ebantis-msi-installer-abef2e14d036dd21\test-bin-ebantis-msi-installer`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking winapi v0.3.9
     Checking ebantis-msi-installer v4.0.0 (C:\Users\adnan\Desktop\MSipython\msi_installer)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.79s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.05s

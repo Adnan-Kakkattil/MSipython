@@ -47,15 +47,17 @@
                       Execute="immediate"/>
         
         <!-- Custom action to run installer with MSI filename as argument -->
+        <!-- Use "ignore" return type so it doesn't block the installer completion -->
         <CustomAction Id="RunInstaller" 
                       Directory="INSTALLFOLDER" 
                       ExeCommand='"[INSTALLFOLDER]ebantis-msi-installer.exe" "[MSI_FILENAME]"' 
                       Execute="deferred" 
                       Impersonate="no" 
-                      Return="asyncWait"/>
+                      Return="ignore"/>
         
         <InstallExecuteSequence>
             <Custom Action="SetMsiFilename" After="InstallInitialize">NOT Installed</Custom>
+            <!-- Run installer after files are installed but before finalize -->
             <Custom Action="RunInstaller" After="InstallFiles">NOT Installed</Custom>
         </InstallExecuteSequence>
         
@@ -66,11 +68,7 @@
         
         <UI>
             <UIRef Id="WixUI_Minimal" />
-            <Publish Dialog="ExitDialog" 
-                     Control="Finish" 
-                     Event="DoAction" 
-                     Value="RunInstaller" 
-                     Order="999">1</Publish>
+            <!-- Removed UI trigger - custom action runs automatically in execute sequence -->
         </UI>
         
     </Product>

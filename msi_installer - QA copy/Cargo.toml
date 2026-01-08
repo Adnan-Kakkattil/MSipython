@@ -1,0 +1,10 @@
+[package]
+name = "ebantis-msi-installer"
+version = "4.0.0"
+edition = "2021"
+authors = ["Ebantis Team"]
+description = "Ebantis V4 MSI Installer - Executes PowerShell installation script"
+license = "MIT"
+
+[dependencies]
+winapi = { version = "0.3", features = ["winuser", "shellapi", "processenv", "processthreadsapi", "handleapi", "errhandlingapi", "fileapi", "winbase"] }

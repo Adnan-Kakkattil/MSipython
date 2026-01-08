@@ -1,0 +1,43 @@
+# cargo-wix configuration file
+[package]
+name = "ebantis-msi-installer"
+version = "4.0.0"
+authors = ["Ebantis Team"]
+description = "Ebantis V4 Agent Installation"
+license = "MIT"
+
+[msi]
+# Product information
+product-name = "Ebantis V4 Installer"
+manufacturer = "Ebantis"
+upgrade-code = "B8B8B8B8-B8B8-B8B8-B8B8-B8B8B8B8B8B8"
+installer-version = "200"
+compressed = true
+install-scope = "perMachine"
+
+# UI
+ui = "minimal"
+
+# Files to include
+files = [
+    { source = "target/release/ebantis-msi-installer.exe", target-dir = "INSTALLFOLDER" },
+    { source = "installer.ps1", target-dir = "INSTALLFOLDER" }
+]
+
+# Custom actions
+custom-actions = [
+    {
+        id = "RunInstaller",
+        exe-command = "[INSTALLFOLDER]ebantis-msi-installer.exe",
+        execute = "deferred",
+        impersonate = false,
+        return = "asyncWait"
+    }
+]
+
+# Installation sequence
+install-sequence = [
+    { action = "RunInstaller", after = "InstallFiles", condition = "NOT Installed" }
+]
+
+

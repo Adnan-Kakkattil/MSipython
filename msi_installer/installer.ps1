@@ -1217,7 +1217,6 @@ try {
     Write-Log "Checking Internet Connection..." "INFO"
     if (-not (Test-InternetConnection)) {
         Write-Log "No Internet Connection. Installation Aborted." "ERROR"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1226,7 +1225,6 @@ try {
     $tenantInfo = Initialize-TenantInfo
     if (-not $tenantInfo) {
         Write-Log "Failed to initialize tenant information. Installation Aborted." "ERROR"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1274,7 +1272,6 @@ try {
     if (-not $downloadSuccess) {
         Write-Log "Application download failed. Aborting installation..." "ERROR"
         Update-InstallationData -TenantId $TenantId -BranchId $BranchId -StatusFlag $false -InstallationFlag $false -Status "failed"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1329,16 +1326,14 @@ try {
     }
     
     Write-Log "=== Installation Process Completed ===" "INFO"
-    Write-Host ""
-    Write-Host "Installation completed successfully!" -ForegroundColor Green
-    Write-Host "Log file location: $LogFile" -ForegroundColor Cyan
-    Read-Host "Press Enter to close..."
+    Write-Log "Installation completed successfully!" "INFO"
+    Write-Log "Log file location: $LogFile" "INFO"
+    # Silent completion - no popup or Read-Host
     
 } catch {
     Write-Log "Fatal error in main execution: $_" "ERROR"
     Write-Log "Stack trace: $($_.ScriptStackTrace)" "ERROR"
-    Write-Host "Installation failed. Check the log file for details: $LogFile" -ForegroundColor Red
-    Read-Host "Press Enter to exit..."
+    Write-Log "Installation failed. Check the log file for details: $LogFile" "ERROR"
     Exit 1
 }
 

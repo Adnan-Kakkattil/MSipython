@@ -1,7 +1,8 @@
 use std::env;
 use std::path::PathBuf;
 use std::process::{Command, Stdio};
-use winapi::um::winuser::{MessageBoxW, MB_OK, MB_ICONERROR, MB_ICONINFORMATION};
+use winapi::um::winbase::CREATE_NO_WINDOW;
+use winapi::um::winuser::{MessageBoxW, MB_OK, MB_ICONERROR};
 
 fn show_error(message: &str) {
     let wide: Vec<u16> = message.encode_utf16().chain(std::iter::once(0)).collect();
@@ -16,18 +17,7 @@ fn show_error(message: &str) {
     }
 }
 
-fn show_info(message: &str) {
-    let wide: Vec<u16> = message.encode_utf16().chain(std::iter::once(0)).collect();
-    let title: Vec<u16> = "Ebantis Installer\0".encode_utf16().chain(std::iter::once(0)).collect();
-    unsafe {
-        MessageBoxW(
-            std::ptr::null_mut(),
-            wide.as_ptr(),
-            title.as_ptr(),
-            MB_OK | MB_ICONINFORMATION
-        );
-    }
-}
+// Removed show_info function - no popup on success
 
 fn extract_branch_id_from_msi_name() -> Option<String> {
     // Try multiple methods to get the MSI file path:
@@ -116,25 +106,35 @@ fn main() {
     
     // Execute PowerShell script with admin privileges
     // The script will check for admin and elevate if needed
+    // Use CREATE_NO_WINDOW to hide the PowerShell console window
     let mut cmd = Command::new("powershell.exe");
     cmd.args(&[
         "-NoProfile",
         "-ExecutionPolicy",
         "Bypass",
+        "-WindowStyle",
+        "Hidden",
         "-File",
         script_path.to_str().unwrap(),
     ]);
     cmd.env("EBANTIS_BRANCH_ID", &branch_id);
     cmd.stdin(Stdio::null());
-    cmd.stdout(Stdio::inherit());
-    cmd.stderr(Stdio::inherit());
+    cmd.stdout(Stdio::null());  // Suppress output
+    cmd.stderr(Stdio::null());  // Suppress errors
+    // Hide PowerShell window using CREATE_NO_WINDOW flag
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        cmd.creation_flags(CREATE_NO_WINDOW);
+    }
     
     match cmd.status() {
         Ok(status) => {
             if status.success() {
-                show_info("Installation completed successfully!");
+                // Silent success - no popup
                 std::process::exit(0);
             } else {
+                // Only show error popup on failure
                 show_error(&format!(
                     "Installation failed with exit code: {}",
                     status.code().unwrap_or(-1)
