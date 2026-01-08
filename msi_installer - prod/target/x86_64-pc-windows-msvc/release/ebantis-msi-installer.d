@@ -1,1 +1,1 @@
-C:\Users\adnan\Desktop\MSipython\msi_installer\target\x86_64-pc-windows-msvc\release\ebantis-msi-installer.exe: C:\Users\adnan\Desktop\MSipython\msi_installer\build.rs C:\Users\adnan\Desktop\MSipython\msi_installer\src\main.rs
+C:\Users\adnan\Desktop\MSipython\msi_installer\ -\ prod\target\x86_64-pc-windows-msvc\release\ebantis-msi-installer.exe: C:\Users\adnan\Desktop\MSipython\msi_installer\ -\ prod\build.rs C:\Users\adnan\Desktop\MSipython\msi_installer\ -\ prod\src\main.rs

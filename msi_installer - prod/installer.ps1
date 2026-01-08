@@ -350,7 +350,7 @@ function Decrypt-Response {
 function Get-AuthToken {
     # Matches Python: get_auth_token()
     try {
-        $authApiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/users/auth/login"
+        $authApiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/users/auth/login"
         $payload = @{
             userName = "internalmanager@mail.com"
             password = "#@Admin&eu1"
@@ -414,7 +414,7 @@ function Get-TenantInfoByBranchId {
             return $null
         }
         
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/branches/branch/$BranchId"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/branches/branch/$BranchId"
         $headers = @{
             "Authorization" = "Bearer $authToken"
         }
@@ -523,7 +523,7 @@ function Get-VersionDetails {
             return $null
         }
         
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId"
         $headers = @{
             "Authorization" = "Bearer $authToken"
         }
@@ -558,7 +558,7 @@ function Test-InstallationAllowed {
             return $false, $msg
         }
         
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId"
         $headers = @{
             "Authorization" = "Bearer $authToken"
         }
@@ -639,7 +639,7 @@ function Update-InstallationData {
             return $false
         }
         
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/app-installations"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/app-installations"
         $headers = @{
             "Authorization" = "Bearer $authToken"
         }
@@ -674,7 +674,7 @@ function Update-InstalledDeviceCount {
             return $false, $msg
         }
         
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId/installed-count"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$BranchId/installed-count"
         $headers = @{
             "Authorization" = "Bearer $authToken"
             "Content-Type" = "application/json"
@@ -827,7 +827,7 @@ function Download-AppPackage {
             New-Item -ItemType Directory -Path $ExtractPath -Force | Out-Null
         }
         
-        $ApiUrl = "https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=$BranchId"
+        $ApiUrl = "https://ebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=$BranchId"
         $Headers = @{
             "IsInternalCall" = "true"
             "ClientId" = "EbantisTrack"
