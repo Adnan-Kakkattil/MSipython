@@ -1,0 +1,12 @@
+# cargo-wix configuration
+product: Ebantis V4 Installer
+manufacturer: Ebantis
+upgrade-code: B8B8B8B8-B8B8-B8B8-B8B8-B8B8B8B8B8B8
+version: 4.0.0
+description: Installs Ebantis V4 Agent using PowerShell installer script
+license: MIT
+icon-path: null
+start-menu: false
+ui: minimal
+
+

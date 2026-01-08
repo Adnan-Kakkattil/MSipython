@@ -373,11 +373,20 @@ function Get-AuthToken {
 
 function Get-BranchIdFromExecutable {
     # Matches Python: extract_branch_id_from_filename()
+    # Also supports branch ID from environment variable (for MSI installer)
     try {
+        # First, check if branch ID is provided via environment variable (from MSI)
+        if ($env:EBANTIS_BRANCH_ID) {
+            $branchId = $env:EBANTIS_BRANCH_ID
+            Write-Log "Branch ID retrieved from environment variable: $branchId" "INFO"
+            return $branchId
+        }
+        
+        # Try to extract from executable filename
         $exeName = Split-Path -Leaf $PSCommandPath
         Write-Log "Executable name: $exeName" "INFO"
         
-        # Try to extract branch_id from format: EbantisTracker_{branch_id}.exe
+        # Try to extract branch_id from format: EbantisTracker_{branch_id}.exe or .msi
         if ($exeName -match "EbantisTracker_(.+)\.(exe|msi)") {
             $branchId = $matches[1]
             Write-Log "Extracted branch_id from filename: $branchId" "INFO"

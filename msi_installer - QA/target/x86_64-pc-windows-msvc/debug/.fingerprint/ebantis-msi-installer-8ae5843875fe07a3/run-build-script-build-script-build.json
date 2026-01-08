@@ -1,0 +1,1 @@
+{"rustc":7895727629726570510,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[16697709085584637886,"build_script_build",false,5640581071800620193]],"local":[{"RerunIfChanged":{"output":"x86_64-pc-windows-msvc\\debug\\build\\ebantis-msi-installer-8ae5843875fe07a3\\output","paths":["build.rs"]}}],"rustflags":[],"config":0,"compile_kind":0}
