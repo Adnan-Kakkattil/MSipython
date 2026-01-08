@@ -1217,7 +1217,6 @@ try {
     Write-Log "Checking Internet Connection..." "INFO"
     if (-not (Test-InternetConnection)) {
         Write-Log "No Internet Connection. Installation Aborted." "ERROR"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1226,7 +1225,6 @@ try {
     $tenantInfo = Initialize-TenantInfo
     if (-not $tenantInfo) {
         Write-Log "Failed to initialize tenant information. Installation Aborted." "ERROR"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1255,6 +1253,18 @@ try {
     Remove-StartupFile  # Remove old .bat files from startup
     Start-Sleep -Seconds 2
     
+    # Ensure utils and update folders exist (they may have been removed during cleanup)
+    $UtilsFolder = [System.IO.Path]::Combine($ProgramFilesPath, "data", $AppName, "utils")
+    $UpdateFolder = [System.IO.Path]::Combine($ProgramFilesPath, "data", $AppName, "update")
+    if (-not (Test-Path $UtilsFolder)) {
+        New-Item -ItemType Directory -Path $UtilsFolder -Force | Out-Null
+        Write-Log "Created utils folder: $UtilsFolder" "INFO"
+    }
+    if (-not (Test-Path $UpdateFolder)) {
+        New-Item -ItemType Directory -Path $UpdateFolder -Force | Out-Null
+        Write-Log "Created update folder: $UpdateFolder" "INFO"
+    }
+    
     # Step 6: Download and extract application package
     Write-Log "Downloading application package..." "INFO"
     $downloadSuccess = Download-AppPackage -BranchId $BranchId
@@ -1262,7 +1272,6 @@ try {
     if (-not $downloadSuccess) {
         Write-Log "Application download failed. Aborting installation..." "ERROR"
         Update-InstallationData -TenantId $TenantId -BranchId $BranchId -StatusFlag $false -InstallationFlag $false -Status "failed"
-        Read-Host "Press Enter to exit..."
         Exit 1
     }
     
@@ -1317,16 +1326,14 @@ try {
     }
     
     Write-Log "=== Installation Process Completed ===" "INFO"
-    Write-Host ""
-    Write-Host "Installation completed successfully!" -ForegroundColor Green
-    Write-Host "Log file location: $LogFile" -ForegroundColor Cyan
-    Read-Host "Press Enter to close..."
+    Write-Log "Installation completed successfully!" "INFO"
+    Write-Log "Log file location: $LogFile" "INFO"
+    # Silent completion - no popup or Read-Host
     
 } catch {
     Write-Log "Fatal error in main execution: $_" "ERROR"
     Write-Log "Stack trace: $($_.ScriptStackTrace)" "ERROR"
-    Write-Host "Installation failed. Check the log file for details: $LogFile" -ForegroundColor Red
-    Read-Host "Press Enter to exit..."
+    Write-Log "Installation failed. Check the log file for details: $LogFile" "ERROR"
     Exit 1
 }
 

@@ -7,4 +7,4 @@ description = "Ebantis V4 MSI Installer - Executes PowerShell installation scrip
 license = "MIT"
 
 [dependencies]
-winapi = { version = "0.3", features = ["winuser", "shellapi", "processenv", "processthreadsapi", "handleapi", "errhandlingapi", "fileapi", "winbase"] }
+winapi = { version = "0.3", features = ["winuser", "shellapi", "processenv", "processthreadsapi", "handleapi", "errhandlingapi", "fileapi", "winbase", "wincon"] }

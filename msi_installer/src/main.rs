@@ -1,3 +1,6 @@
+// Windows subsystem - no console window
+#![windows_subsystem = "windows"]
+
 use std::env;
 use std::path::PathBuf;
 use std::process::{Command, Stdio};
@@ -77,10 +80,7 @@ fn get_installer_script_path() -> PathBuf {
 fn main() {
     // Extract branch ID from MSI filename
     let branch_id = match extract_branch_id_from_msi_name() {
-        Some(id) => {
-            println!("Extracted branch ID: {}", id);
-            id
-        }
+        Some(id) => id,
         None => {
             show_error("Failed to extract branch ID from MSI filename.\n\nExpected format: EbantisTrack_{branch_id}.msi\n\nPlease ensure the MSI file follows this naming convention.");
             std::process::exit(1);
@@ -97,9 +97,6 @@ fn main() {
         ));
         std::process::exit(1);
     }
-    
-    println!("Executing PowerShell installer with branch ID: {}", branch_id);
-    println!("Script path: {}", script_path.display());
     
     // Set environment variable for branch ID
     env::set_var("EBANTIS_BRANCH_ID", &branch_id);
