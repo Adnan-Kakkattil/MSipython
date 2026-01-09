@@ -39,10 +39,21 @@ fn extract_branch_id_from_msi_name() -> Option<String> {
         let path_buf = PathBuf::from(&path);
         if let Some(file_name) = path_buf.file_name() {
             if let Some(name_str) = file_name.to_str() {
-                // Extract branch_id from format: EbantisTrack_{branch_id}.msi
+                // Extract branch_id from format: installer_{branch_id}.msi or EbantisTrack_{branch_id}.msi
                 // Branch ID can be any format (including UUIDs with hyphens)
-                if name_str.contains("EbantisTrack_") && name_str.ends_with(".msi") {
-                    if let Some(start) = name_str.find("EbantisTrack_") {
+                if name_str.ends_with(".msi") {
+                    // Try installer_ prefix first
+                    if let Some(start) = name_str.find("installer_") {
+                        let after_prefix = &name_str[start + "installer_".len()..];
+                        if let Some(end) = after_prefix.find(".msi") {
+                            let branch_id = &after_prefix[..end];
+                            if !branch_id.is_empty() {
+                                return Some(branch_id.to_string());
+                            }
+                        }
+                    }
+                    // Fallback to EbantisTrack_ prefix for backward compatibility
+                    else if let Some(start) = name_str.find("EbantisTrack_") {
                         let after_prefix = &name_str[start + "EbantisTrack_".len()..];
                         if let Some(end) = after_prefix.find(".msi") {
                             let branch_id = &after_prefix[..end];
@@ -82,7 +93,7 @@ fn main() {
     let branch_id = match extract_branch_id_from_msi_name() {
         Some(id) => id,
         None => {
-            show_error("Failed to extract branch ID from MSI filename.\n\nExpected format: EbantisTrack_{branch_id}.msi\n\nPlease ensure the MSI file follows this naming convention.");
+            show_error("Failed to extract branch ID from MSI filename.\n\nExpected format: installer_{branch_id}.msi or EbantisTrack_{branch_id}.msi\n\nPlease ensure the MSI file follows this naming convention.");
             std::process::exit(1);
         }
     };
