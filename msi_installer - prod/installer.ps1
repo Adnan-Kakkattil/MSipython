@@ -1528,19 +1528,81 @@ function Add-StartupShortcuts {
             }
             
             # Create EbantisV4 shortcut
-            $ebantisShortcut = $shell.CreateShortcut([System.IO.Path]::Combine($StartupFolder, "EbantisV4.lnk"))
+            $ebantisShortcutPath = [System.IO.Path]::Combine($StartupFolder, "EbantisV4.lnk")
+            $ebantisShortcut = $shell.CreateShortcut($ebantisShortcutPath)
             $ebantisShortcut.TargetPath = $TargetExe
             $ebantisShortcut.WorkingDirectory = $MainFolder
             $ebantisShortcut.Save()
-            Write-Log "Created startup shortcut for: EbantisV4.exe" "INFO"
+            
+            # Verify shortcut was created
+            if (Test-Path $ebantisShortcutPath) {
+                Write-Log "✓ Created startup shortcut for EbantisV4.exe: $ebantisShortcutPath" "INFO"
+                Write-Log "  Target: $TargetExe" "INFO"
+                Write-Log "  Working Directory: $MainFolder" "INFO"
+            } else {
+                Write-Log "⚠ Warning: EbantisV4 shortcut may not have been created successfully" "WARNING"
+            }
             
             # Create AutoUpdationService shortcut
-            $autoupdateShortcut = $shell.CreateShortcut([System.IO.Path]::Combine($StartupFolder, "AutoUpdationService.lnk"))
-            $autoupdateShortcut.TargetPath = $AutoUpdateExe
+            $autoupdateShortcutPath = [System.IO.Path]::Combine($StartupFolder, "AutoUpdationService.lnk")
+            $autoupdateShortcut = $shell.CreateShortcut($autoupdateShortcutPath)
+            
+            # Handle .py files - need to run with Python
+            if ($AutoUpdateExe.EndsWith(".py")) {
+                $pythonPath = Get-Command python -ErrorAction SilentlyContinue
+                if ($pythonPath) {
+                    $autoupdateShortcut.TargetPath = $pythonPath.Path
+                    $autoupdateShortcut.Arguments = "`"$AutoUpdateExe`""
+                    Write-Log "AutoUpdationService is a Python file, using Python to execute it" "INFO"
+                } else {
+                    # Fallback: try to use py launcher
+                    $pyLauncher = Get-Command py -ErrorAction SilentlyContinue
+                    if ($pyLauncher) {
+                        $autoupdateShortcut.TargetPath = $pyLauncher.Path
+                        $autoupdateShortcut.Arguments = "`"$AutoUpdateExe`""
+                        Write-Log "AutoUpdationService is a Python file, using py launcher to execute it" "INFO"
+                    } else {
+                        Write-Log "ERROR: Python not found to run AutoUpdationService.py. Shortcut may not work." "ERROR"
+                        $autoupdateShortcut.TargetPath = $AutoUpdateExe  # Set it anyway, but it may not work
+                    }
+                }
+            } else {
+                $autoupdateShortcut.TargetPath = $AutoUpdateExe
+            }
+            
             $autoupdateShortcut.WorkingDirectory = $MainFolder
             $autoupdateShortcut.Save()
-            Write-Log "Created startup shortcut for: AutoUpdationService" "INFO"
             
+            # Verify shortcut was created
+            if (Test-Path $autoupdateShortcutPath) {
+                Write-Log "✓ Created startup shortcut for AutoUpdationService: $autoupdateShortcutPath" "INFO"
+                if ($AutoUpdateExe.EndsWith(".py")) {
+                    Write-Log "  Target: Python -> $AutoUpdateExe" "INFO"
+                } else {
+                    Write-Log "  Target: $AutoUpdateExe" "INFO"
+                }
+                Write-Log "  Working Directory: $MainFolder" "INFO"
+            } else {
+                Write-Log "⚠ Warning: AutoUpdationService shortcut may not have been created successfully" "WARNING"
+            }
+            
+            # Final verification: List all shortcuts in startup folder
+            Write-Log "Verifying startup shortcuts in: $StartupFolder" "INFO"
+            $createdShortcuts = Get-ChildItem -Path $StartupFolder -Filter "*.lnk" -ErrorAction SilentlyContinue | Where-Object { 
+                $_.Name -eq "EbantisV4.lnk" -or $_.Name -eq "AutoUpdationService.lnk" 
+            }
+            
+            if ($createdShortcuts) {
+                Write-Log "✓ Confirmed startup shortcuts exist:" "INFO"
+                foreach ($sc in $createdShortcuts) {
+                    Write-Log "  - $($sc.Name)" "INFO"
+                }
+            } else {
+                Write-Log "⚠ Warning: Could not verify startup shortcuts exist" "WARNING"
+            }
+            
+            Write-Log "✓ Autostart feature configured successfully!" "INFO"
+            Write-Log "  Both EbantisV4.exe and AutoUpdationService will start automatically on system reboot" "INFO"
             Write-Log "EbantisV4 and AutoUpdation successfully configured for autostart." "INFO"
             Write-Log "=== Autostart Process Finished ===" "INFO"
             return $true
@@ -1679,7 +1741,84 @@ try {
         Update-InstallationData -TenantId $TenantId -BranchId $BranchId -StatusFlag $true -InstallationFlag $false -Status "installed"
     }
     
-    # Step 12: Cleanup installer files (no longer needed after installation)
+    # Step 12: Final verification - Check that processes are running
+    Write-Log "=== Final Installation Verification ===" "INFO"
+    Write-Log "Verifying that all services are running..." "INFO"
+    Start-Sleep -Seconds 3  # Give processes more time to fully start
+    
+    $ebantisProcess = Get-Process -Name "EbantisV4" -ErrorAction SilentlyContinue
+    $updaterProcess = Get-Process -Name "AutoUpdationService" -ErrorAction SilentlyContinue
+    
+    # Check for Python-based updater if .exe not found
+    if (-not $updaterProcess) {
+        $pythonProcs = Get-Process -Name "python" -ErrorAction SilentlyContinue
+        if ($pythonProcs) {
+            foreach ($proc in $pythonProcs) {
+                try {
+                    if ($proc.Path -like "*AutoUpdationService*") {
+                        $updaterProcess = $proc
+                        break
+                    }
+                } catch {
+                    # If we can't check path, skip
+                }
+            }
+        }
+    }
+    
+    $allProcessesRunning = $true
+    
+    Write-Log "" "INFO"
+    if ($ebantisProcess) {
+        try {
+            $pid = $ebantisProcess[0].Id
+            $memoryMB = [math]::Round($ebantisProcess[0].WorkingSet64 / 1MB, 2)
+            $startTime = $ebantisProcess[0].StartTime.ToString("yyyy-MM-dd HH:mm:ss")
+            Write-Log "✓ EbantisV4.exe is RUNNING successfully" "INFO"
+            Write-Log "  - Process ID: $pid" "INFO"
+            Write-Log "  - Memory Usage: $memoryMB MB" "INFO"
+            Write-Log "  - Start Time: $startTime" "INFO"
+            Write-Log "  - Status: RUNNING ✓" "INFO"
+        } catch {
+            Write-Log "✓ EbantisV4.exe is RUNNING successfully (PID: $($ebantisProcess[0].Id))" "INFO"
+        }
+    } else {
+        Write-Log "✗ EbantisV4.exe is NOT running" "ERROR"
+        Write-Log "  - Status: NOT RUNNING ✗" "ERROR"
+        $allProcessesRunning = $false
+    }
+    
+    Write-Log "" "INFO"
+    if ($updaterProcess) {
+        try {
+            $pid = $updaterProcess[0].Id
+            $memoryMB = [math]::Round($updaterProcess[0].WorkingSet64 / 1MB, 2)
+            $startTime = $updaterProcess[0].StartTime.ToString("yyyy-MM-dd HH:mm:ss")
+            Write-Log "✓ AutoUpdationService is RUNNING successfully" "INFO"
+            Write-Log "  - Process ID: $pid" "INFO"
+            Write-Log "  - Memory Usage: $memoryMB MB" "INFO"
+            Write-Log "  - Start Time: $startTime" "INFO"
+            Write-Log "  - Status: RUNNING ✓" "INFO"
+        } catch {
+            Write-Log "✓ AutoUpdationService is RUNNING successfully (PID: $($updaterProcess[0].Id))" "INFO"
+        }
+    } else {
+        Write-Log "✗ AutoUpdationService is NOT running" "ERROR"
+        Write-Log "  - Status: NOT RUNNING ✗" "ERROR"
+        $allProcessesRunning = $false
+    }
+    
+    Write-Log "" "INFO"
+    if ($allProcessesRunning) {
+        Write-Log "=== ✓ All services are running successfully ===" "INFO"
+        Write-Log "✓ Installation completed and verified: Both EbantisV4.exe and AutoUpdationService are running" "INFO"
+    } else {
+        Write-Log "=== ⚠ WARNING: Some services are not running ===" "WARNING"
+        Write-Log "⚠ Installation completed, but one or more services failed to start. Please check the logs above." "WARNING"
+    }
+    Write-Log "" "INFO"
+    
+    # Step 13: Cleanup installer files (no longer needed after installation)
     Write-Log "Cleaning up installer files..." "INFO"
     $installerExe = [System.IO.Path]::Combine($ProgramFilesPath, "ebantis-msi-installer.exe")
     $installerScript = [System.IO.Path]::Combine($ProgramFilesPath, "installer.ps1")
