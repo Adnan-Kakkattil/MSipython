@@ -1,0 +1,85 @@
+2025-12-22 10:49:26 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\dist\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 10:49:26 | INFO | Running with administrative privileges.
+2025-12-22 10:49:27 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 10:49:27 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 10:49:27 | INFO | Tenant name 'Infosys Ltd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 10:49:27 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=infosys ltd for tenant: infosys ltd
+2025-12-22 10:49:28 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 10:49:28 | INFO | API credentials successfully stored in SQLite.
+2025-12-22 10:49:28 | INFO | SQLite connection closed.
+2025-12-22 10:49:28 | INFO | Credentials successfully decrypted.
+2025-12-22 10:49:28 | INFO | MongoDB connection string retrieved successfully.
+2025-12-22 10:49:29 | WARNING | No tenant found with name 'Infosys Ltd'
+2025-12-22 10:49:30 | WARNING | No data found for tenant_id: None
+2025-12-22 11:37:46 | INFO | Logging initialized at: ('D:\\Gritstone.Ebantistrack.EbantisV4.EXE\\Ebantis_setup\\dist\\Ebantis_setup_2025-12-22.log',)
+2025-12-22 11:37:46 | INFO | Running with administrative privileges.
+2025-12-22 11:37:47 | INFO | Starting Ebantis installer/uninstaller process...
+2025-12-22 11:37:47 | INFO | Starting installation with tenant name: Infosys Ltd
+2025-12-22 11:37:47 | INFO | Tenant name 'Infosys Ltd' saved successfully to JSON file: C:/ProgramData/EbantisV4\tenant_info\tenant_details.json
+2025-12-22 11:37:47 | INFO | Fetching credentials from API: https://ebantistrackapi.metlone.com/api/v1/Connection/GetAllConnections?tenant=infosys ltd for tenant: infosys ltd
+2025-12-22 11:37:48 | INFO | Connecting to SQLite database at path: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 11:37:48 | INFO | API credentials successfully stored in SQLite.
+2025-12-22 11:37:48 | INFO | SQLite connection closed.
+2025-12-22 11:37:48 | INFO | Credentials successfully decrypted.
+2025-12-22 11:37:48 | INFO | MongoDB connection string retrieved successfully.
+2025-12-22 11:37:49 | INFO | Tenant ID found for 'Infosys Ltd': 40
+2025-12-22 11:37:50 | INFO | Installation allowed for tenant 40 (108/200)
+2025-12-22 11:37:50 | INFO | Installation allowed. Proceeding to register the agent...
+2025-12-22 11:37:50 | INFO | Registering agent at: https://qaebantisapiv4.thekosmoz.com/register-agent
+2025-12-22 11:37:50 | INFO | Payload being sent: {'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'hostname': 'GRIT-CLT-LT-254', 'display_name': 'gritlocaladmin', 'email': None, 'upn': '', 'username': 'Gritlocaladmin', 'tenant_name': 'Infosys Ltd'}
+2025-12-22 11:37:51 | INFO | Register Agent API returned status: 200
+2025-12-22 11:37:51 | INFO | Agent registered successfully: {'status': 'ok', 'message': 'Agent registered successfully', 'machine_id': '4C4C4544-0057-4B10-804E-B7C04F375333', 'user_id': '23', 'tenant_id': 40, 'tenant_name': 'Infosys Ltd', 'tenant_unique_id': '25d21528-0bab-452b-a988-68d2f6b4ffdd', 'company_unique_id': '7448f05a-8a73-419a-bc68-7ead68df0377', 'branch_unique_id': '8464f685-c8ba-44a0-8799-c75db7e6daff', 'username': 'Gritlocaladmin', 'user_email': None}
+2025-12-22 11:37:51 | INFO | Starting installation...
+2025-12-22 11:37:51 | INFO | InstallWorker started.
+2025-12-22 11:37:51 | INFO | Existing utils path found: C:/Program Files/EbantisV4\data\EbantisV4\utils. Ending running tasks.
+2025-12-22 11:37:51 | INFO | EXE files found to terminate: []
+2025-12-22 11:37:53 | INFO | Removed: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 11:37:53 | INFO | End_task completed successfully.
+2025-12-22 11:37:53 | INFO | Removing update directory: C:/Program Files/EbantisV4\data
+2025-12-22 11:37:55 | INFO | Removed directory: C:/Program Files/EbantisV4\data
+2025-12-22 11:37:55 | WARNING | Startup file not found: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ebantis.bat
+2025-12-22 11:37:55 | INFO | Previous version removed successfully.
+2025-12-22 11:37:55 | INFO | Starting download of main and model packages in parallel.
+2025-12-22 11:37:55 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 11:37:55 | INFO | Credentials successfully decoded from database.
+2025-12-22 11:37:55 | INFO | Fetching latest version details from MongoDB...
+2025-12-22 11:37:56 | INFO | Latest Version_Id retrieved: v4.0.2
+2025-12-22 11:37:57 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-22 11:37:57 | INFO | Starting main package download from API...
+2025-12-22 11:37:57 | INFO | File size from API: 31 bytes
+2025-12-22 11:38:02 | INFO | Downloaded main package successfully.
+2025-12-22 11:38:02 | INFO | Extracting main package from C:/ProgramData/EbantisV4\Ebantisv4.zip to C:/Program Files/EbantisV4\data...
+2025-12-22 11:38:05 | INFO | Zip extracted successfully to: C:/Program Files/EbantisV4\data
+2025-12-22 11:38:05 | INFO | Main package extracted successfully.
+2025-12-22 11:38:06 | INFO | Fetching latest version details from MongoDB...
+2025-12-22 11:38:06 | INFO | Latest Version_Id retrieved: v4.0.2
+2025-12-22 11:38:07 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-22 11:38:07 | INFO | Removed file: C:/ProgramData/EbantisV4\Ebantisv4.zip
+2025-12-22 11:38:07 | INFO | Cleanup successful: C:/ProgramData/EbantisV4\Ebantisv4.zip removed.
+2025-12-22 11:38:07 | INFO | Main package download/extraction result: True
+2025-12-22 11:38:07 | INFO | Proceeding folder permission updates, and Wazuh installation.
+2025-12-22 11:38:07 | INFO | === Autostart Process Started ===
+2025-12-22 11:38:08 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\downloaded_version
+2025-12-22 11:38:08 | INFO | Permissions successfully updated for C:/ProgramData/EbantisV4\user_collection
+2025-12-22 11:38:08 | INFO | Permissions successfully updated for C:/Program Files/EbantisV4\data\EbantisV4
+2025-12-22 11:38:32 | INFO | No running EbantisV4.exe found.
+2025-12-22 11:38:34 | INFO | Started: C:\Program Files\EbantisV4\data\EbantisV4\EbantisV4.exe
+2025-12-22 11:38:35 | INFO | EbantisV4.exe added/updated in Windows Startup.
+2025-12-22 11:38:35 | INFO | EbantisV4.exe successfully configured for autostart.
+2025-12-22 11:38:35 | INFO | === Autostart Process Finished ===
+2025-12-22 11:38:35 | INFO | Wazuh agent installation started.
+2025-12-22 11:38:54 | INFO | Service 'WazuhSvc' status: running
+2025-12-22 11:38:54 | INFO | OSSEC agent directory found: C:\Program Files (x86)\ossec-agent
+2025-12-22 11:38:54 | INFO | Wazuh agent installed and running successfully.
+2025-12-22 11:38:54 | INFO | Connected to SQLite database at: C:/ProgramData/EbantisV4\user_collection\Gritlocaladmin\tracking_system.db
+2025-12-22 11:38:54 | INFO | Credentials successfully decoded from database.
+2025-12-22 11:38:55 | WARNING | No tenant found with name 'infosys ltd'
+2025-12-22 11:38:56 | INFO | Fetching latest version details from MongoDB...
+2025-12-22 11:38:56 | INFO | Latest Version_Id retrieved: v4.0.2
+2025-12-22 11:38:57 | INFO | Installation data upserted for host: GRIT-CLT-LT-254
+2025-12-22 11:38:58 | INFO | Updating installed device count for tenant_id: None
+2025-12-22 11:38:59 | WARNING | No matching tenant found for tenant_id: None
+2025-12-22 11:38:59 | INFO | Installed device count update: False, message: No matching tenant found for tenant_id: None
+2025-12-22 11:38:59 | INFO | Installation completed successfully.
+2025-12-22 11:39:01 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\utils
+2025-12-22 11:39:01 | WARNING | Path does not exist: C:/Program Files/EbantisV4\data\EbantisV4\update

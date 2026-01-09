@@ -895,7 +895,7 @@ function Download-AppPackage {
             
             # Get all entries (members)
             $entries = $zip.Entries
-            $members = $entries | ForEach-Object { $_.FullName } | Where-Object { $_ }
+            $members = $entries | ForEach-Object { $_.FullName } | Where-Object { $_ -and -not ($_.TrimEnd('\', '/').EndsWith('/') -or $_.TrimEnd('\', '/').EndsWith('\')) }
             
             if ($members.Count -eq 0) {
                 Write-Log "ZIP file appears to be empty" "ERROR"
@@ -904,51 +904,58 @@ function Download-AppPackage {
             }
             
             # Find common root directory (matches Python: os.path.commonpath)
-            # Get all unique directory paths
-            $allDirs = @()
-            foreach ($member in $members) {
-                if ($member -match '^(.+?)[/\\]') {
-                    $dirPart = $matches[1]
-                    if ($dirPart -and -not ($allDirs -contains $dirPart)) {
-                        $allDirs += $dirPart
-                    }
-                }
-            }
+            # Normalize all paths to use forward slashes for comparison
+            $normalizedMembers = $members | ForEach-Object { $_.Replace('\', '/') }
             
-            # Find the longest common prefix
+            # Find the common path prefix
             $rootDir = ""
-            if ($allDirs.Count -gt 0) {
-                $firstDir = $allDirs[0]
-                $rootDir = $firstDir
+            if ($normalizedMembers.Count -gt 0) {
+                # Sort to get a consistent comparison
+                $sortedMembers = $normalizedMembers | Sort-Object
+                $firstPath = $sortedMembers[0]
                 
-                foreach ($dir in $allDirs) {
-                    $commonLength = 0
-                    $minLength = [Math]::Min($rootDir.Length, $dir.Length)
-                    for ($i = 0; $i -lt $minLength; $i++) {
-                        if ($rootDir[$i] -eq $dir[$i]) {
-                            $commonLength++
-                        } else {
+                # Check if there's a common prefix
+                $commonParts = $firstPath.Split('/')
+                $rootDir = ""
+                
+                for ($i = 0; $i -lt $commonParts.Length; $i++) {
+                    $testPath = ($commonParts[0..$i] -join '/')
+                    if ($testPath) { $testPath += '/' }
+                    
+                    $allMatch = $true
+                    foreach ($member in $sortedMembers) {
+                        if (-not $member.StartsWith($testPath)) {
+                            $allMatch = $false
                             break
                         }
                     }
-                    # Find last separator in common part
-                    $lastSep = $rootDir.LastIndexOfAny(@('\', '/'), [Math]::Max(0, $commonLength - 1))
-                    if ($lastSep -ge 0) {
-                        $rootDir = $rootDir.Substring(0, $lastSep + 1)
+                    
+                    if ($allMatch) {
+                        $rootDir = $testPath
                     } else {
-                        $rootDir = ""
                         break
                     }
                 }
             }
             
             # Check if rootDir exists as a directory entry in the ZIP
-            $rootDirIsMember = $members | Where-Object { $_ -eq $rootDir -or $_ -eq $rootDir.TrimEnd('\', '/') }
+            $rootDirNormalized = $rootDir.Replace('/', '\')
+            $rootDirIsMember = $false
+            if ($rootDir) {
+                $rootDirCheck = $rootDir.TrimEnd('/')
+                $rootDirIsMember = $members | Where-Object { 
+                    $normalized = $_.Replace('\', '/')
+                    $normalized -eq $rootDirCheck -or $normalized -eq "$rootDirCheck/" 
+                } | Measure-Object | Select-Object -ExpandProperty Count
+                $rootDirIsMember = $rootDirIsMember -gt 0
+            }
             
-            Write-Log "Detected root directory in ZIP: '$rootDir' (is member: $($rootDirIsMember.Count -gt 0))" "INFO"
+            Write-Log "Detected root directory in ZIP: '$rootDir' (is member: $rootDirIsMember)" "INFO"
             
-            # Extract all files
+            # Extract all files with progress tracking
             $extractedCount = 0
+            $totalFiles = ($entries | Where-Object { -not ($_.FullName.EndsWith('/') -or $_.FullName.EndsWith('\')) }).Count
+            
             foreach ($entry in $entries) {
                 # Skip directory-only entries
                 if ($entry.FullName.EndsWith('/') -or $entry.FullName.EndsWith('\')) {
@@ -956,13 +963,14 @@ function Download-AppPackage {
                 }
                 
                 # Determine target path
-                if ($rootDir -and $rootDirIsMember -and $entry.FullName.StartsWith($rootDir)) {
+                $entryPath = $entry.FullName.Replace('/', '\')
+                if ($rootDir -and $rootDirIsMember -and $entryPath.StartsWith($rootDirNormalized)) {
                     # Strip the root directory
-                    $relativePath = $entry.FullName.Substring($rootDir.Length).TrimStart('\', '/')
+                    $relativePath = $entryPath.Substring($rootDirNormalized.Length).TrimStart('\', '/')
                     $targetPath = [System.IO.Path]::Combine($ExtractPath, $relativePath)
                 } else {
                     # Extract directly (no root directory to strip)
-                    $targetPath = [System.IO.Path]::Combine($ExtractPath, $entry.FullName)
+                    $targetPath = [System.IO.Path]::Combine($ExtractPath, $entryPath)
                 }
                 
                 # Ensure target directory exists
@@ -972,35 +980,126 @@ function Download-AppPackage {
                 }
                 
                 # Extract the file
-                [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $targetPath, $true)
-                $extractedCount++
+                try {
+                    [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $targetPath, $true)
+                    $extractedCount++
+                    
+                    # Log progress every 10%
+                    if ($totalFiles -gt 0 -and ($extractedCount % ([Math]::Max(1, [Math]::Floor($totalFiles / 10))) -eq 0)) {
+                        $progress = [Math]::Floor(($extractedCount / $totalFiles) * 100)
+                        Write-Log "Extraction progress: $extractedCount/$totalFiles files ($progress%)" "INFO"
+                    }
+                } catch {
+                    Write-Log "Warning: Failed to extract $($entry.FullName): $_" "WARNING"
+                }
             }
             
             $zip.Dispose()
             Write-Log "Main package extracted successfully. Extracted $extractedCount files to: $ExtractPath" "INFO"
             
-            # Verify extraction by checking for expected structure
+            # Verify extraction and handle multiple root directories (EbantisV4, EbantisV4prod)
+            $topLevelDirs = Get-ChildItem -Path $ExtractPath -Directory -ErrorAction SilentlyContinue | Select-Object Name, FullName
+            Write-Log "Top-level directories in extraction path:" "INFO"
+            foreach ($dir in $topLevelDirs) {
+                Write-Log "  - $($dir.Name)" "INFO"
+            }
+            
+            # Handle case where ZIP contains multiple directories (e.g., EbantisV4 and EbantisV4prod)
+            # Priority: Use EbantisV4prod if it exists and has executables, otherwise use EbantisV4
+            $targetDir = [System.IO.Path]::Combine($ExtractPath, "EbantisV4")
+            $ebantisProdDir = [System.IO.Path]::Combine($ExtractPath, "EbantisV4prod")
+            
+            $hasEbantisV4 = Test-Path $targetDir
+            $hasEbantisProd = Test-Path $ebantisProdDir
+            
+            if ($hasEbantisProd) {
+                Write-Log "Found EbantisV4prod directory" "INFO"
+                # Check which directory has the executables
+                $prodExe = [System.IO.Path]::Combine($ebantisProdDir, "EbantisV4.exe")
+                $prodAutoUpdate = [System.IO.Path]::Combine($ebantisProdDir, "AutoUpdationService.exe")
+                $prodAutoUpdatePy = [System.IO.Path]::Combine($ebantisProdDir, "AutoUpdationService.py")
+                
+                $hasExeInProd = (Test-Path $prodExe) -or (Test-Path $prodAutoUpdate) -or (Test-Path $prodAutoUpdatePy)
+                
+                if ($hasExeInProd) {
+                    Write-Log "Executables found in EbantisV4prod, using as primary" "INFO"
+                    # Merge EbantisV4 into EbantisV4prod, then rename EbantisV4prod to EbantisV4
+                    if ($hasEbantisV4) {
+                        Write-Log "Merging EbantisV4 into EbantisV4prod" "INFO"
+                        Get-ChildItem -Path $targetDir -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
+                            $relativePath = $_.FullName.Substring($targetDir.Length).TrimStart('\', '/')
+                            if ($relativePath) {
+                                $targetPath = [System.IO.Path]::Combine($ebantisProdDir, $relativePath)
+                                $targetParent = [System.IO.Path]::GetDirectoryName($targetPath)
+                                
+                                if (-not (Test-Path $targetParent)) {
+                                    New-Item -ItemType Directory -Path $targetParent -Force | Out-Null
+                                }
+                                
+                                if (-not $_.PSIsContainer) {
+                                    Copy-Item -Path $_.FullName -Destination $targetPath -Force -ErrorAction SilentlyContinue
+                                }
+                            }
+                        }
+                        Remove-Item -Path $targetDir -Recurse -Force -ErrorAction SilentlyContinue
+                    }
+                    # Rename EbantisV4prod to EbantisV4
+                    Rename-Item -Path $ebantisProdDir -NewName "EbantisV4" -Force -ErrorAction SilentlyContinue
+                    Write-Log "Renamed EbantisV4prod to EbantisV4" "INFO"
+                } else {
+                    # Executables are in EbantisV4, merge EbantisV4prod into EbantisV4
+                    Write-Log "Merging EbantisV4prod into EbantisV4" "INFO"
+                    if (-not $hasEbantisV4) {
+                        New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+                    }
+                    
+                    Get-ChildItem -Path $ebantisProdDir -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
+                        $relativePath = $_.FullName.Substring($ebantisProdDir.Length).TrimStart('\', '/')
+                        if ($relativePath) {
+                            $targetPath = [System.IO.Path]::Combine($targetDir, $relativePath)
+                            $targetParent = [System.IO.Path]::GetDirectoryName($targetPath)
+                            
+                            if (-not (Test-Path $targetParent)) {
+                                New-Item -ItemType Directory -Path $targetParent -Force | Out-Null
+                            }
+                            
+                            if (-not $_.PSIsContainer) {
+                                Copy-Item -Path $_.FullName -Destination $targetPath -Force -ErrorAction SilentlyContinue
+                            }
+                        }
+                    }
+                    
+                    Remove-Item -Path $ebantisProdDir -Recurse -Force -ErrorAction SilentlyContinue
+                    Write-Log "Merged EbantisV4prod into EbantisV4" "INFO"
+                }
+            }
+            
+            # Verify executables at expected path
             $expectedExePath = [System.IO.Path]::Combine($ExtractPath, "EbantisV4", "EbantisV4.exe")
-            $expectedAutoUpdatePath = [System.IO.Path]::Combine($ExtractPath, "EbantisV4", "AutoUpdationService.exe")
+            $expectedAutoUpdateExe = [System.IO.Path]::Combine($ExtractPath, "EbantisV4", "AutoUpdationService.exe")
+            $expectedAutoUpdatePy = [System.IO.Path]::Combine($ExtractPath, "EbantisV4", "AutoUpdationService.py")
             
             if (Test-Path $expectedExePath) {
                 Write-Log "Verified: EbantisV4.exe found at $expectedExePath" "INFO"
             } else {
                 Write-Log "Warning: EbantisV4.exe not found at expected path: $expectedExePath" "WARNING"
+                # Search recursively for the executable
+                $foundExe = Get-ChildItem -Path $ExtractPath -Filter "EbantisV4.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($foundExe) {
+                    Write-Log "Found EbantisV4.exe at alternative location: $($foundExe.FullName)" "INFO"
+                }
             }
             
-            if (Test-Path $expectedAutoUpdatePath) {
-                Write-Log "Verified: AutoUpdationService.exe found at $expectedAutoUpdatePath" "INFO"
+            if (Test-Path $expectedAutoUpdateExe) {
+                Write-Log "Verified: AutoUpdationService.exe found at $expectedAutoUpdateExe" "INFO"
+            } elseif (Test-Path $expectedAutoUpdatePy) {
+                Write-Log "Verified: AutoUpdationService.py found at $expectedAutoUpdatePy (will use .py version)" "INFO"
             } else {
-                Write-Log "Warning: AutoUpdationService.exe not found at expected path: $expectedAutoUpdatePath" "WARNING"
-            }
-            
-            # List top-level directories to help debug
-            $topLevelDirs = Get-ChildItem -Path $ExtractPath -Directory | Select-Object -First 5 Name
-            if ($topLevelDirs) {
-                Write-Log "Top-level directories in extraction path:" "INFO"
-                foreach ($dir in $topLevelDirs) {
-                    Write-Log "  - $($dir.Name)" "INFO"
+                Write-Log "Warning: AutoUpdationService.exe/.py not found at expected paths" "WARNING"
+                # Search recursively for the updater
+                $foundUpdater = Get-ChildItem -Path $ExtractPath -Filter "AutoUpdationService.*" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                if ($foundUpdater) {
+                    Write-Log "Found AutoUpdationService at alternative location: $($foundUpdater.FullName)" "INFO"
                 }
             }
         } catch {
@@ -1107,6 +1206,7 @@ function Add-StartupShortcuts {
         # Check for both .exe and .py versions of AutoUpdationService
         $AutoUpdateExe = [System.IO.Path]::Combine($MainFolder, "AutoUpdationService.exe")
         $AutoUpdatePy = [System.IO.Path]::Combine($MainFolder, "AutoUpdationService.py")
+        $updaterMainFolder = $MainFolder
         # Use .exe if available, otherwise .py
         if (-not (Test-Path $AutoUpdateExe) -and (Test-Path $AutoUpdatePy)) {
             $AutoUpdateExe = $AutoUpdatePy
@@ -1131,15 +1231,53 @@ function Add-StartupShortcuts {
         # Wait 2 seconds (matches Python: time.sleep(2))
         Start-Sleep -Seconds 2
         
-        # Step 2: Start processes
+        # Step 2: Start processes (with comprehensive search if not at expected path)
         $ebantisStarted = $false
         $updaterStarted = $false
         
+        # Comprehensive search for EbantisV4.exe
+        if (-not (Test-Path $TargetExe)) {
+            Write-Log "EbantisV4.exe not at expected path, searching recursively..." "INFO"
+            $searchPath = [System.IO.Path]::Combine($ProgramFilesPath, "data")
+            
+            # Search in multiple locations
+            $searchPaths = @(
+                $searchPath,
+                $MainFolder,
+                [System.IO.Path]::Combine($searchPath, "EbantisV4"),
+                [System.IO.Path]::Combine($searchPath, "EbantisV4prod")
+            )
+            
+            $foundExe = $null
+            foreach ($path in $searchPaths) {
+                if (Test-Path $path) {
+                    $foundExe = Get-ChildItem -Path $path -Filter "EbantisV4.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                    if ($foundExe) {
+                        break
+                    }
+                }
+            }
+            
+            if ($foundExe) {
+                $TargetExe = $foundExe.FullName
+                $MainFolder = $foundExe.DirectoryName
+                Write-Log "Found EbantisV4.exe at: $TargetExe" "INFO"
+            } else {
+                Write-Log "Could not find EbantisV4.exe in any location" "ERROR"
+            }
+        }
+        
         if (Test-Path $TargetExe) {
             try {
-                Start-Process -FilePath $TargetExe -WorkingDirectory $MainFolder
-                Write-Log "Started: $TargetExe" "INFO"
-                $ebantisStarted = $true
+                $process = Start-Process -FilePath $TargetExe -WorkingDirectory $MainFolder -PassThru
+                Start-Sleep -Milliseconds 500
+                if ($process -and -not $process.HasExited) {
+                    Write-Log "Started: $TargetExe (PID: $($process.Id))" "INFO"
+                    $ebantisStarted = $true
+                } else {
+                    Write-Log "Warning: Process may have exited immediately after start" "WARNING"
+                    $ebantisStarted = $true  # Consider it started even if it exits quickly
+                }
             } catch {
                 Write-Log "Error starting $TargetExe : $_" "ERROR"
             }
@@ -1147,16 +1285,89 @@ function Add-StartupShortcuts {
             Write-Log "Executable not found: $TargetExe" "ERROR"
         }
         
-        if (Test-Path $AutoUpdateExe) {
+        # Comprehensive search for AutoUpdationService (check both .exe and .py)
+        $updaterFound = $false
+        if (-not (Test-Path $AutoUpdateExe) -and -not (Test-Path $AutoUpdatePy)) {
+            Write-Log "AutoUpdationService not at expected path, searching recursively..." "INFO"
+            $searchPath = [System.IO.Path]::Combine($ProgramFilesPath, "data")
+            
+            # Search in multiple locations
+            $searchPaths = @(
+                $searchPath,
+                $MainFolder,
+                [System.IO.Path]::Combine($searchPath, "EbantisV4"),
+                [System.IO.Path]::Combine($searchPath, "EbantisV4prod")
+            )
+            
+            $foundAutoUpdate = $null
+            foreach ($path in $searchPaths) {
+                if (Test-Path $path) {
+                    # Try .exe first
+                    $foundAutoUpdate = Get-ChildItem -Path $path -Filter "AutoUpdationService.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                    if ($foundAutoUpdate) {
+                        break
+                    }
+                    # Then try .py
+                    $foundAutoUpdate = Get-ChildItem -Path $path -Filter "AutoUpdationService.py" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                    if ($foundAutoUpdate) {
+                        break
+                    }
+                }
+            }
+            
+            if ($foundAutoUpdate) {
+                if ($foundAutoUpdate.Extension -eq ".exe") {
+                    $AutoUpdateExe = $foundAutoUpdate.FullName
+                    $AutoUpdatePy = $null
+                } else {
+                    $AutoUpdatePy = $foundAutoUpdate.FullName
+                    $AutoUpdateExe = $AutoUpdatePy
+                }
+                $updaterMainFolder = $foundAutoUpdate.DirectoryName
+                Write-Log "Found AutoUpdationService at: $($foundAutoUpdate.FullName)" "INFO"
+                $updaterFound = $true
+            } else {
+                Write-Log "Could not find AutoUpdationService in any location" "ERROR"
+            }
+        } else {
+            $updaterFound = $true
+            if (Test-Path $AutoUpdateExe) {
+                $updaterMainFolder = $MainFolder
+            } elseif (Test-Path $AutoUpdatePy) {
+                $updaterMainFolder = (Get-Item $AutoUpdatePy).DirectoryName
+            }
+        }
+        
+        if ($updaterFound -and (Test-Path $AutoUpdateExe)) {
             try {
-                Start-Process -FilePath $AutoUpdateExe -WorkingDirectory $MainFolder
-                Write-Log "Started: $AutoUpdateExe" "INFO"
-                $updaterStarted = $true
+                if ($AutoUpdateExe.EndsWith(".py")) {
+                    # If it's a Python file, we need to run it with Python
+                    $pythonPath = Get-Command python -ErrorAction SilentlyContinue
+                    if ($pythonPath) {
+                        $process = Start-Process -FilePath $pythonPath.Path -ArgumentList "`"$AutoUpdateExe`"" -WorkingDirectory $updaterMainFolder -PassThru
+                    } else {
+                        Write-Log "Python not found to run AutoUpdationService.py" "WARNING"
+                        $updaterStarted = $false
+                    }
+                } else {
+                    $process = Start-Process -FilePath $AutoUpdateExe -WorkingDirectory $updaterMainFolder -PassThru
+                }
+                
+                if ($process) {
+                    Start-Sleep -Milliseconds 500
+                    if (-not $process.HasExited) {
+                        Write-Log "Started: $AutoUpdateExe (PID: $($process.Id))" "INFO"
+                        $updaterStarted = $true
+                    } else {
+                        Write-Log "Warning: AutoUpdationService process may have exited immediately" "WARNING"
+                        $updaterStarted = $true  # Consider it started even if it exits quickly
+                    }
+                }
             } catch {
                 Write-Log "Error starting $AutoUpdateExe : $_" "ERROR"
             }
-        } else {
-            Write-Log "Executable not found: $AutoUpdateExe" "ERROR"
+        } elseif (-not $updaterFound) {
+            Write-Log "Executable not found: AutoUpdationService" "ERROR"
         }
         
         # Step 3: Add to startup if both started successfully (matches autostart.pyx add_to_startup)
@@ -1323,6 +1534,29 @@ try {
     } else {
         Write-Log "Installation completed but autostart configuration failed." "WARNING"
         Update-InstallationData -TenantId $TenantId -BranchId $BranchId -StatusFlag $true -InstallationFlag $false -Status "installed"
+    }
+    
+    # Step 12: Cleanup installer files (no longer needed after installation)
+    Write-Log "Cleaning up installer files..." "INFO"
+    $installerExe = [System.IO.Path]::Combine($ProgramFilesPath, "ebantis-msi-installer.exe")
+    $installerScript = [System.IO.Path]::Combine($ProgramFilesPath, "installer.ps1")
+    
+    if (Test-Path $installerExe) {
+        try {
+            Remove-Item -Path $installerExe -Force -ErrorAction SilentlyContinue
+            Write-Log "Removed installer executable: $installerExe" "INFO"
+        } catch {
+            Write-Log "Warning: Could not remove installer executable: $_" "WARNING"
+        }
+    }
+    
+    if (Test-Path $installerScript) {
+        try {
+            Remove-Item -Path $installerScript -Force -ErrorAction SilentlyContinue
+            Write-Log "Removed installer script: $installerScript" "INFO"
+        } catch {
+            Write-Log "Warning: Could not remove installer script: $_" "WARNING"
+        }
     }
     
     Write-Log "=== Installation Process Completed ===" "INFO"

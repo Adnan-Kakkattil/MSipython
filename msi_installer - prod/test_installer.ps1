@@ -4,12 +4,12 @@
 $ErrorActionPreference = "Continue"
 
 Write-Host "=== Installer Test Script ===" -ForegroundColor Cyan
-Write-Host "Branch ID: cc73f958-adc7-4baa-8058-1fb899c9ce70" -ForegroundColor Yellow
+Write-Host "Branch ID: ae72b051-1a4c-4820-8a26-30773e552ee1" -ForegroundColor Yellow
 Write-Host ""
 
 # Set environment variable
-$env:EBANTIS_BRANCH_ID = "cc73f958-adc7-4baa-8058-1fb899c9ce70"
-$branchId = "cc73f958-adc7-4baa-8058-1fb899c9ce70"
+$env:EBANTIS_BRANCH_ID = "ae72b051-1a4c-4820-8a26-30773e552ee1"
+$branchId = "ae72b051-1a4c-4820-8a26-30773e552ee1"
 
 # Test 1: Check if branch ID is read correctly
 Write-Host "[Test 1] Checking branch ID extraction..." -ForegroundColor Cyan
@@ -25,7 +25,7 @@ Write-Host ""
 # Test 2: Check API connectivity and tenant info
 Write-Host "[Test 2] Testing API connectivity and tenant info retrieval..." -ForegroundColor Cyan
 try {
-    $authApiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/users/auth/login"
+    $authApiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/users/auth/login"
     $payload = @{
         userName = "internalmanager@mail.com"
         password = "#@Admin&eu1"
@@ -38,7 +38,7 @@ try {
         Write-Host "  ✓ Authentication successful" -ForegroundColor Green
         
         # Test tenant info retrieval
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/branches/branch/$branchId"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/branches/branch/$branchId"
         $headers = @{
             "Authorization" = "Bearer $($response.accessToken)"
         }
@@ -66,7 +66,7 @@ Write-Host ""
 # Test 3: Check download API
 Write-Host "[Test 3] Testing download API endpoint..." -ForegroundColor Cyan
 try {
-    $downloadUrl = "https://qaebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=$branchId"
+    $downloadUrl = "https://ebantisapiv4.thekosmoz.com/DownloadLatestversion?branch_id=$branchId"
     $headers = @{
         "IsInternalCall" = "true"
         "ClientId" = "EbantisTrack"
@@ -92,7 +92,7 @@ Write-Host ""
 # Test 4: Check installation allowed
 Write-Host "[Test 4] Testing installation permission check..." -ForegroundColor Cyan
 try {
-    $authApiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/users/auth/login"
+    $authApiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/users/auth/login"
     $payload = @{
         userName = "internalmanager@mail.com"
         password = "#@Admin&eu1"
@@ -100,7 +100,7 @@ try {
     
     $authResponse = Invoke-RestMethod -Uri $authApiUrl -Method Post -Body $payload -ContentType "application/json" -TimeoutSec 30
     if ($authResponse.accessToken) {
-        $apiUrl = "https://qaebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$branchId"
+        $apiUrl = "https://ebantisv4service.thekosmoz.com/api/v1/app-versions/branches/$branchId"
         $headers = @{
             "Authorization" = "Bearer $($authResponse.accessToken)"
         }
@@ -132,5 +132,5 @@ Write-Host "To run the full installer (requires admin privileges):" -ForegroundC
 Write-Host "  powershell -ExecutionPolicy Bypass -File installer.ps1" -ForegroundColor White
 Write-Host ""
 Write-Host "Or use the MSI installer:" -ForegroundColor Yellow
-$msiPath = "target\wix\EbantisTrack_cc73f958-adc7-4baa-8058-1fb899c9ce70.msi"
+$msiPath = "target\wix\EbantisTrack_ae72b051-1a4c-4820-8a26-30773e552ee1.msi"
 Write-Host "  Start-Process `"$msiPath`"" -ForegroundColor White
